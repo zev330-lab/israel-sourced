@@ -138,7 +138,7 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
   <h1>Israel, Sourced</h1>
   <p>The case for Israel, built from history, logic, morality and primary records. Use it to check what you know, then to answer what you hear. Every line links to its source.</p>
   <div class="tools">
-    <a href="#quiz"><b>Take the quiz</b><span>10 questions most people get wrong</span></a>
+    <a href="#quiz"><b>Take the quiz</b><span>10 quick questions, about 3 minutes</span></a>
     <a href="#history"><b>3,000 years</b><span>The history in one minute</span></a>
     <a href="#moral"><b>The moral case</b><span>What each side wants and does</span></a>
     <a href="#numbers"><b>The charts</b><span>The numbers that end arguments</span></a>
@@ -149,9 +149,9 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
 
 
 
-<p class="kicker" id="quiz">Test yourself</p>
-<h2>10 questions most people get wrong</h2>
-<p class="intro">Send this to anyone who's sure they know the story. Every answer comes with a source.</p>
+<p class="kicker" id="quiz">Quiz</p>
+<h2>How much do you know?</h2>
+<p class="intro">Ten quick questions about Israel, its history and its neighbors. Nothing to sign up for, and no wrong way to take it. Every answer comes with a short explanation and a source, so you come away knowing a little more either way.</p>
 <section class="quiz" id="quizbox" aria-live="polite"></section>
 
 <p class="kicker" id="history">History</p>
@@ -405,7 +405,7 @@ var i=0, score=0, answered=false;
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
 function dots(){var h='<div class="dots">';for(var k=0;k<Q.length;k++)h+='<span class="'+(k<i?'done':'')+'"></span>';return h+'</div>';}
 function render(){
-  if(i>=Q.length){box.innerHTML='<p class="qn">Your score</p><p class="score">'+score+' of '+Q.length+'</p><p class="ex">If some answers surprised you, you are not alone. Most of this is never taught, and feeds reward what is fast and emotional. Scroll down for the history, the moral case and the numbers.</p><div class="nav"><button type="button" class="next" id="qagain">Start over</button></div>';
+  if(i>=Q.length){box.innerHTML='<p class="qn">You answered</p><p class="score">'+score+' of '+Q.length+'</p><p class="ex">Thanks for taking the time. Much of this is rarely taught, so every question you learned something from is a win. If you want to go deeper, the history, the charts and the full answers are just below.</p><div class="nav"><button type="button" class="next" id="qagain">Start over</button></div>';
     document.getElementById('qagain').onclick=function(){i=0;score=0;render();};return;}
   var q=Q[i]; answered=false;
   var h='<div class="nav"><span class="qn">Question '+(i+1)+' of '+Q.length+'</span>'+dots()+'</div><p class="qq">'+esc(q.q)+'</p><div class="opts">';
@@ -418,7 +418,7 @@ function pick(k){
   if(k===q.a) score++;
   box.querySelectorAll('.opt').forEach(function(b){var kk=+b.getAttribute('data-k'); if(kk===q.a) b.classList.add('right'); else if(kk===k) b.classList.add('wrong'); b.disabled=true;});
   var src=q.s.map(function(x){return '<a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.t)+'</a>';}).join(' · ');
-  document.getElementById('qex').innerHTML='<p class="ex"><b>'+(k===q.a?'Right. ':'Not quite. ')+'</b>'+esc(q.x)+' '+src+'</p><div class="nav"><span></span><button type="button" class="next" id="qnext">'+(i+1<Q.length?'Next question':'See your score')+'</button></div>';
+  document.getElementById('qex').innerHTML='<p class="ex"><b>'+(k===q.a?'That\'s it. ':'Here\'s the answer: ')+'</b>'+esc(q.x)+' '+src+'</p><div class="nav"><span></span><button type="button" class="next" id="qnext">'+(i+1<Q.length?'Next question':'See your score')+'</button></div>';
   document.getElementById('qnext').onclick=function(){i++;render();box.scrollIntoView({block:'start'});};
 }
 render();
