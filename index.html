@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="The case for Israel: history, logic, morality and the numbers. Every line links to the record.">
+<meta property="og:title" content="Israel, Sourced">
+<meta property="og:description" content="The case for Israel in numbers: 3,000 years of history, the moral case, charts, a 10-question quiz and sourced answers.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%230b2a5b%22/%3E%3Ctext x=%2232%22 y=%2243%22 font-family=%22Georgia%22 font-size=%2230%22 font-weight=%22900%22 fill=%22white%22 text-anchor=%22middle%22%3EIS%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0b2a5b">
+<title>Israel, Sourced</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,800;8..60,900&display=swap">
+<style>
+/* Layout: phone-first single column. Hero stats, then history timeline, the moral case, charts, and argument cards that each lead with one big number. */
+:root{
+  --bg:#f4f6fa; --card:#ffffff; --ink:#0d1726; --muted:#55627a; --rule:#dde3ec;
+  --accent:#1a56b0; --accent-soft:#e7eefa; --deep:#0b2a5b;
+  --false:#b42318; --false-bg:#fdecea; --true:#17794a; --true-bg:#e4f3eb; --mis:#a85a07; --mis-bg:#fcf0e0;
+  --bar:#1a56b0; --bar2:#a7b3c6;
+  --serif:"Source Serif 4",Georgia,serif; --sans:"Source Sans 3",-apple-system,"Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0b1220;--card:#131e30;--ink:#e9eff8;--muted:#9fb0c9;--rule:#24334a;--accent:#79a8f0;--accent-soft:#18294a;--deep:#0a1a36;--false:#ff8a80;--false-bg:#3a1a19;--true:#6fd39f;--true-bg:#123323;--mis:#f5b56b;--mis-bg:#3a2a14;--bar:#79a8f0;--bar2:#46566f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1220;--card:#131e30;--ink:#e9eff8;--muted:#9fb0c9;--rule:#24334a;--accent:#79a8f0;--accent-soft:#18294a;--deep:#0a1a36;--false:#ff8a80;--false-bg:#3a1a19;--true:#6fd39f;--true-bg:#123323;--mis:#f5b56b;--mis-bg:#3a2a14;--bar:#79a8f0;--bar2:#46566f;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5}
+.wrap{max-width:700px;margin:0 auto;padding-inline:16px;padding-block:0 64px;display:grid;gap:20px}
+a{color:var(--accent)}
+.hero{background:var(--deep);color:#fff;margin-inline:-16px;padding:28px 20px 24px;display:grid;gap:16px}
+.hero h1{font-family:var(--serif);font-weight:900;font-size:2.4rem;line-height:1.05;margin:0;letter-spacing:-.01em}
+.hero p{margin:0;color:#c8d6ee;font-size:1.05rem;max-width:34ch}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.tile{border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:10px}
+.tile b{display:block;font-family:var(--serif);font-weight:900;font-size:1.7rem;line-height:1;color:#fff}
+.tile span{display:block;font-size:.78rem;color:#c8d6ee;margin-top:4px;line-height:1.3}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding-block:10px;z-index:2}
+nav.toc a{font-size:.85rem;font-weight:700;text-decoration:none;border:1px solid var(--rule);border-radius:999px;padding:7px 13px;background:var(--card)}
+h2{font-family:var(--serif);font-weight:800;font-size:1.55rem;line-height:1.15;margin:18px 0 0;text-wrap:balance}
+.kicker{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:22px 0 -14px}
+.intro{color:var(--muted);margin:0}
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;border-left:3px solid var(--accent);display:grid;gap:14px}
+.tl li{position:relative;padding-left:18px}
+.tl li::before{content:"";position:absolute;left:-8px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--card);border:3px solid var(--accent)}
+.tl li.dark::before{background:var(--false);border-color:var(--false)}
+.tl .yr{font-family:var(--serif);font-weight:800;font-size:1.05rem}
+.tl p{margin:2px 0 0;font-size:.95rem}
+.tl a,.src a,.arg li a,.moral a{font-size:.8rem;white-space:nowrap}
+/* moral case */
+.moral{display:grid;gap:12px}
+.principle{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px}
+.principle h3{margin:0 0 6px;font-size:1.1rem}
+.principle p{margin:0}
+.principle .vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.principle .vs div{border-radius:8px;padding:10px;font-size:.92rem}
+.principle .vs .il{background:var(--accent-soft)} .principle .vs .hm{background:var(--false-bg)}
+.principle .vs b{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.logic{background:var(--deep);color:#fff;border-radius:12px;padding:18px}
+.logic p{margin:0;font-family:var(--serif);font-size:1.2rem;line-height:1.35}
+.logic small{display:block;margin-top:8px;color:#c8d6ee;font-family:var(--sans);font-size:.8rem}
+/* charts */
+.charts{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:620px){.charts{grid-template-columns:1fr 1fr}}
+.chart{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px;margin:0}
+.chart h3{margin:0 0 2px;font-size:1rem}
+.chart .take{margin:0 0 10px;color:var(--muted);font-size:.9rem}
+.chart svg{width:100%;height:auto;display:block}
+.chart svg text{fill:var(--ink);font-family:var(--sans);font-size:13px}
+.chart svg .lbl{fill:var(--muted)}
+.src{font-size:.78rem;color:var(--muted);margin-top:8px}
+.src a{color:var(--muted)}
+/* arguments */
+.arg{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start}
+.arg .big{grid-row:span 3;font-family:var(--serif);font-weight:900;font-size:2rem;line-height:1;color:var(--accent);min-width:3.2ch;text-align:center;padding-top:4px}
+.arg .big small{display:block;font-family:var(--sans);font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px;max-width:9ch;margin-inline:auto}
+.arg .claim{font-family:var(--serif);font-weight:600;font-size:1.08rem;margin:0 0 6px}
+.pill{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.08em;padding:3px 9px;border-radius:999px;margin-right:6px}
+.pill.f{color:var(--false);background:var(--false-bg)} .pill.t{color:var(--true);background:var(--true-bg)} .pill.m{color:var(--mis);background:var(--mis-bg)}
+.answer{font-weight:800;font-size:1.15rem;line-height:1.3;margin:6px 0 0}
+.arg .body{grid-column:1 / -1;margin-top:10px}
+.arg ul{margin:0;padding-left:20px;display:grid;gap:6px;font-size:.95rem}
+.say{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--rule);font-size:.93rem}
+.say b{color:var(--muted)}
+.copy{margin-top:10px;font:inherit;font-size:.85rem;font-weight:700;color:var(--accent);background:transparent;border:1px solid var(--rule);border-radius:8px;padding:9px 14px;min-height:44px;cursor:pointer}
+.copy:focus-visible,nav.toc a:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.quotes{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--false);border-radius:12px;padding:16px;display:grid;gap:14px}
+.quotes blockquote{margin:0;font-family:var(--serif);font-size:1.1rem;line-height:1.35}
+.quotes cite{display:block;font-family:var(--sans);font-style:normal;font-size:.8rem;color:var(--muted);margin-top:4px}
+.quotes cite a{color:var(--muted)}
+footer{color:var(--muted);font-size:.85rem}
+.bars{display:grid;gap:8px}
+.b{display:grid;grid-template-columns:minmax(0,9.5em) 1fr auto;align-items:center;gap:8px;font-size:.88rem}
+.b .l{color:var(--muted);line-height:1.2}
+.b .t{background:var(--accent-soft);border-radius:4px;height:16px;overflow:hidden}
+.b .t i{display:block;height:100%;min-width:3px;border-radius:4px}
+.b .v{font-weight:800;font-variant-numeric:tabular-nums}
+i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i.red,.stack .red{background:var(--false)}
+.stack{display:flex;height:34px;border-radius:6px;overflow:hidden;font-size:.75rem;font-weight:700;color:#fff}
+.stack span{display:flex;align-items:center;padding-inline:6px;white-space:nowrap;overflow:hidden}
+.waffle{display:grid;grid-template-columns:repeat(20,1fr);gap:3px}
+.waffle span{aspect-ratio:1;border-radius:2px;background:var(--bar2)}
+.waffle span.on{background:var(--false)}
+.offers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.offers li{border-top:4px solid var(--false);padding-top:6px;font-size:.8rem;display:grid;gap:2px}
+.offers b{font-family:var(--serif);font-size:1.1rem}
+.offers em{font-style:normal;font-weight:700;color:var(--false)}
+/* quiz */
+.quiz{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:18px;display:grid;gap:12px}
+.quiz .qn{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.quiz .qq{font-family:var(--serif);font-weight:800;font-size:1.25rem;line-height:1.25;margin:0}
+.quiz .opts{display:grid;gap:8px}
+.quiz button.opt{font:inherit;text-align:left;padding:12px 14px;min-height:48px;border-radius:10px;border:1px solid var(--rule);background:var(--bg);color:var(--ink);cursor:pointer}
+.quiz button.opt.right{border-color:var(--true);background:var(--true-bg)}
+.quiz button.opt.wrong{border-color:var(--false);background:var(--false-bg)}
+.quiz .ex{margin:0;font-size:.95rem}
+.quiz .ex a{font-size:.8rem}
+.quiz .nav{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.quiz .next{font:inherit;font-weight:800;background:var(--accent);color:#fff;border:0;border-radius:10px;padding:12px 18px;min-height:48px;cursor:pointer}
+.quiz .dots{display:flex;gap:4px}
+.quiz .dots span{width:8px;height:8px;border-radius:50%;background:var(--rule)}
+.quiz .dots span.done{background:var(--accent)}
+.quiz .score{font-family:var(--serif);font-weight:900;font-size:2.4rem;margin:0}
+
+@media (max-width:380px){.tiles b{font-size:1.4rem}.arg{grid-template-columns:1fr}.arg .big{grid-row:auto;text-align:left;margin-bottom:6px}.arg .big small{margin-inline:0}}
+</style>
+<style>html,body{margin:0}*,*::before,*::after{box-sizing:border-box}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="hero">
+  <h1>Israel, Sourced</h1>
+  <p>The case for Israel: history, logic, morality and the numbers. Every line links to the record.</p>
+  <div class="tiles">
+    <div class="tile"><b>15.8M</b><span>Jews in the whole world, 0.2% of humanity</span></div>
+    <div class="tile"><b>597×</b><span>larger: the Arab world vs. Israel</span></div>
+    <div class="tile"><b>4</b><span>offers of a Palestinian state, none accepted</span></div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Sections">
+  <a href="#quiz">Quiz</a><a href="#history">History</a><a href="#moral">The moral case</a><a href="#numbers">Numbers</a><a href="#arguments">Answers</a><a href="#words">Hamas's words</a>
+</nav>
+
+
+<p class="kicker" id="quiz">Test yourself</p>
+<h2>10 questions most people get wrong</h2>
+<p class="intro">Send this to anyone who's sure they know the story. Every answer comes with a source.</p>
+<section class="quiz" id="quizbox" aria-live="polite"></section>
+
+<p class="kicker" id="history">History</p>
+<h2>3,000 years in one minute</h2>
+<p class="intro">Jews are not newcomers to this land. They are the people whose name, language and faith were born there.</p>
+<ol class="tl">
+  <li><span class="yr">c. 1208 BCE</span><p>An Egyptian pharaoh's victory stone names "Israel" as a people in Canaan, the oldest known mention. <a href="https://archive.org/details/sixtemplesattheb00petruoft" target="_blank" rel="noopener">Petrie, Merneptah Stele</a></p></li>
+  <li class="dark"><span class="yr">70 CE</span><p>Rome destroys Jerusalem and the Second Temple. <a href="https://penelope.uchicago.edu/josephus/war-6.html" target="_blank" rel="noopener">Josephus</a></p></li>
+  <li class="dark"><span class="yr">c. 135 CE</span><p>After crushing a Jewish revolt, Rome renames Judaea "Syria Palaestina" and bars Jews from Jerusalem. "Palestine" was a name imposed by an empire. <a href="https://www.britannica.com/place/Palestine/Roman-Palestine" target="_blank" rel="noopener">Britannica</a></p></li>
+  <li><span class="yr">c. 200–400 CE</span><p>Jews stay. The Mishnah and the Jerusalem Talmud are written in the Galilee. <a href="https://jewishvirtuallibrary.org/jsource/judaica/ejud_0002_0014_0_13999.html" target="_blank" rel="noopener">Encyclopaedia Judaica</a></p></li>
+  <li><span class="yr">1922</span><p>The League of Nations recognizes "the historical connection of the Jewish people with Palestine" and the grounds for "reconstituting their national home." <a href="https://avalon.law.yale.edu/20th_century/palmanda.asp" target="_blank" rel="noopener">Mandate text</a></p></li>
+  <li><span class="yr">1947</span><p>The UN offers two states. The Jewish Agency accepts. The Arab Higher Committee rejects, and Arab armies invade in 1948. <a href="https://documents.un.org/doc/resolution/gen/nr0/038/88/pdf/nr003888.pdf" target="_blank" rel="noopener">UN Res. 181</a></p></li>
+  <li class="dark"><span class="yr">1948–1972</span><p>About 820,000 Jews leave or are driven from Arab countries. Most rebuild in Israel. <a href="https://jewishvirtuallibrary.org/jewish-refugees-from-arab-countries" target="_blank" rel="noopener">JVL</a></p></li>
+  <li><span class="yr">2000 & 2008</span><p>Israel offers a Palestinian state twice more. No deal. Abbas later admits he rejected the 2008 offer. <a href="https://web.archive.org/web/20240101223609/https://www.timesofisrael.com/abbas-admits-he-rejected-2008-peace-offer-from-olmert/" target="_blank" rel="noopener">AP</a></p></li>
+  <li><span class="yr">2005</span><p>Israel leaves Gaza entirely: 21 settlements, about 8,500 to 9,000 settlers, every soldier. <a href="https://www.britannica.com/event/Israels-disengagement-from-Gaza" target="_blank" rel="noopener">Britannica</a></p></li>
+  <li class="dark"><span class="yr">2007</span><p>Hamas seizes Gaza by force. "Hamas routed Fatah's militias in a week of fighting." <a href="https://www.cfr.org/backgrounders/what-hamas" target="_blank" rel="noopener">CFR</a></p></li>
+  <li class="dark"><span class="yr">7 Oct 2023</span><p>Hamas invades Israel, murders 695 Israeli civilians, 71 foreigners and 373 security personnel, and takes 251 hostages. <a href="https://www.france24.com/en/live-news/20231215-israel-social-security-data-reveals-true-picture-of-oct-7-deaths" target="_blank" rel="noopener">Israel's social security data (AFP)</a> · <a href="https://abc7news.com/post/body-last-remaining-hostage-retrieved-gaza-israel-says/18479257/" target="_blank" rel="noopener">ABC</a></p></li>
+</ol>
+
+<p class="kicker" id="moral">The moral case</p>
+<h2>Judge each side by what it wants and what it does</h2>
+<section class="moral">
+  <div class="principle">
+    <h3>Who targets civilians?</h3>
+    <p>Intent separates war from atrocity.</p>
+    <div class="vs">
+      <div class="hm"><b>Hamas</b>Its charter calls for "killing the Jews." On October 7 it murdered 695 Israeli civilians, including 36 children. The youngest was 10 months old. <a href="https://avalon.law.yale.edu/20th_century/hamas.asp" target="_blank" rel="noopener">Charter</a> · <a href="https://www.france24.com/en/live-news/20231215-israel-social-security-data-reveals-true-picture-of-oct-7-deaths" target="_blank" rel="noopener">AFP</a></div>
+      <div class="il"><b>Israel</b>It issues evacuation orders before operations. Even UNRWA's chief says his Gaza staff left after Israeli evacuation orders in October 2023. <a href="https://www.timesofisrael.com/liveblog-february-10-2024/" target="_blank" rel="noopener">Times of Israel</a></div>
+    </div>
+  </div>
+  <div class="principle">
+    <h3>Who lives with the other?</h3>
+    <p>One side has two million Arab citizens. The other wants no Jews at all.</p>
+    <div class="vs">
+      <div class="il"><b>Israel</b>21% of its people are Arab. 13 Arab members sit in the Knesset. A Muslim justice sits on the Supreme Court. <a href="https://www.cbs.gov.il/he/mediarelease/DocLib/2023/424/11_23_424b.pdf" target="_blank" rel="noopener">CBS</a> · <a href="https://en.globes.co.il/en/article-poll-1001551756" target="_blank" rel="noopener">Globes</a> · <a href="https://www.haaretz.com/israel-news/2017-08-03/ty-article/israels-first-arab-supreme-court-justice-retiring/0000017f-edff-da6f-a77f-fdff6d6b0000" target="_blank" rel="noopener">Haaretz</a></div>
+      <div class="hm"><b>Hamas</b>It rejects "any alternative to the full and complete liberation of Palestine, from the river to the sea." Gaza has not held a legislative vote since 2006. <a href="https://web.archive.org/web/20170510123932/http://hamas.ps/en/post/678/" target="_blank" rel="noopener">Hamas 2017</a> · <a href="https://www.cfr.org/backgrounders/what-hamas" target="_blank" rel="noopener">CFR</a></div>
+    </div>
+  </div>
+  <div class="principle">
+    <h3>Who wanted two states?</h3>
+    <p>Israel's founders accepted partition in 1947. Arab leaders rejected it and went to war. The pattern repeated in 1937, 2000 and 2008. Peace has always required one thing the other side refused: accepting a Jewish state.</p>
+  </div>
+  <div class="principle">
+    <h3>The double standard</h3>
+    <p>In 2018 the UN General Assembly could not pass a resolution simply condemning Hamas. It got 87 votes for and 58 against, and failed only because a two-thirds rule was imposed first. <a href="https://www.dw.com/en/un-general-assembly-rejects-us-resolution-to-condemn-hamas/a-46623413" target="_blank" rel="noopener">DW</a></p>
+  </div>
+  <div class="logic">
+    <p>If Hamas laid down its weapons tomorrow, the war would end. If Israel laid down its weapons tomorrow, there would be no Israel.</p>
+    <small>The argument, in one sentence.</small>
+  </div>
+</section>
+
+<p class="kicker" id="numbers">The numbers</p>
+<h2>The charts that end most arguments</h2>
+<section class="charts"><figure class="chart"><h3>How many Jews are there?</h3><p class="take">People imagine hundreds of millions. It is 15.8 million.</p><div class="bars"><div class="b"><span class="l">Jews</span><span class="t"><i class="hi" style="width:0.79%"></i></span><span class="v">15.8M</span></div><div class="b"><span class="l">Arab world</span><span class="t"><i class="lo" style="width:25.15%"></i></span><span class="v">503M</span></div><div class="b"><span class="l">Muslims</span><span class="t"><i class="lo" style="width:100.00%"></i></span><span class="v">2.0B</span></div></div><p class="src"><a href="https://www.jpr.org.uk/reports/jewish-people-2126-demography-identity-and-future-global-minority" target="_blank" rel="noopener">DellaPergola / JPR 2026</a> · <a href="https://www.pewresearch.org/religion/2025/06/09/how-the-global-religious-landscape-changed-from-2010-to-2020/" target="_blank" rel="noopener">Pew 2025</a> · <a href="https://data.worldbank.org/indicator/SP.POP.TOTL?locations=1A" target="_blank" rel="noopener">World Bank</a></p></figure><figure class="chart"><h3>Land: Israel vs. the Arab world</h3><p class="take">The Arab world is 597 times larger.</p><div class="bars"><div class="b"><span class="l">Israel</span><span class="t"><i class="hi" style="width:0.60%"></i></span><span class="v">22,070 km²</span></div><div class="b"><span class="l">Arab world</span><span class="t"><i class="lo" style="width:100.00%"></i></span><span class="v">13.2M km²</span></div></div><p class="src"><a href="https://data.worldbank.org/indicator/AG.SRF.TOTL.K2?locations=IL-1A" target="_blank" rel="noopener">World Bank, 2023</a></p></figure><figure class="chart"><h3>Who was killed on October 7</h3><p class="take">Most of the dead were civilians, murdered in homes and at a festival.</p><div class="bars"><div class="b"><span class="l">Israeli civilians</span><span class="t"><i class="red" style="width:100.00%"></i></span><span class="v">695</span></div><div class="b"><span class="l">Security personnel</span><span class="t"><i class="lo" style="width:53.67%"></i></span><span class="v">373</span></div><div class="b"><span class="l">Foreigners</span><span class="t"><i class="lo" style="width:10.22%"></i></span><span class="v">71</span></div><div class="b"><span class="l">Taken hostage</span><span class="t"><i class="hi" style="width:36.12%"></i></span><span class="v">251</span></div></div><p class="src"><a href="https://www.france24.com/en/live-news/20231215-israel-social-security-data-reveals-true-picture-of-oct-7-deaths" target="_blank" rel="noopener">Israel's social security data, via AFP</a> · <a href="https://abc7news.com/post/body-last-remaining-hostage-retrieved-gaza-israel-says/18479257/" target="_blank" rel="noopener">ABC</a></p></figure><figure class="chart"><h3>Offers of a Palestinian state</h3><p class="take">Four offers. No Palestinian state.</p><ol class="offers"><li><b>1937</b><span>Peel plan</span><em>Rejected</em></li><li><b>1947</b><span>UN partition</span><em>Rejected; war</em></li><li><b>2000</b><span>Clinton Parameters</span><em>No deal; intifada</em></li><li><b>2008</b><span>Olmert offer</span><em>Rejected</em></li></ol><p class="src"><a href="https://unispal.un.org/pdfs/Cmd5479.pdf" target="_blank" rel="noopener">Peel 1937</a> · <a href="https://documents.un.org/doc/resolution/gen/nr0/038/88/pdf/nr003888.pdf" target="_blank" rel="noopener">UN 181</a> · <a href="https://web.archive.org/web/20110721145451/http://www.usembassy-israel.org.il/publish/peace/archives/2001/january/me0103b.html" target="_blank" rel="noopener">Clinton Parameters</a> · <a href="https://web.archive.org/web/20240101223609/https://www.timesofisrael.com/abbas-admits-he-rejected-2008-peace-offer-from-olmert/" target="_blank" rel="noopener">AP 2008</a></p></figure><figure class="chart"><h3>Who lives in Israel</h3><p class="take">One in five Israelis is Arab.</p><div class="stack"><span class="hi" style="width:73.2%">Jewish 73%</span><span class="red" style="width:21.1%">Arab 21%</span><span class="lo" style="width:5.7%"></span></div><p class="src"><a href="https://www.cbs.gov.il/he/mediarelease/DocLib/2023/424/11_23_424b.pdf" target="_blank" rel="noopener">Israel Central Bureau of Statistics</a></p></figure><figure class="chart"><h3>Israel's parliament</h3><p class="take">13 of 120 Knesset members are Arab.</p><div class="waffle" role="img" aria-label="13 of 120 Knesset seats held by Arab members"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><p class="src"><a href="https://en.globes.co.il/en/article-poll-1001551756" target="_blank" rel="noopener">Globes</a></p></figure><figure class="chart"><h3>Where Israeli Jews come from</h3><p class="take">Not "white Europeans": about half have Middle Eastern or North African roots.</p><div class="stack"><span class="red" style="width:48%">Mizrahi / Sephardi 48%</span><span class="hi" style="width:45%">Ashkenazi 45%</span><span class="lo" style="width:7%"></span></div><p class="src"><a href="https://www.pewresearch.org/wp-content/uploads/sites/20/2016/03/Israel-Survey-Full-Report.pdf" target="_blank" rel="noopener">Pew Research Center</a></p></figure><figure class="chart"><h3>What Palestinians say</h3><p class="take">After the war began, a majority still backed October 7. Few want one shared state.</p><div class="bars"><div class="b"><span class="l">Called Oct 7 "correct" (Oct 2025)</span><span class="t"><i class="red" style="width:53.00%"></i></span><span class="v">53%</span></div><div class="b"><span class="l">Want one equal state (Aug 2026)</span><span class="t"><i class="lo" style="width:10.00%"></i></span><span class="v">10%</span></div></div><p class="src"><a href="https://www.pcpsr.org/sites/default/files/Poll%2096%20press%20release%20FINAL%20ENGLISH%2028%20Oct%202025.pdf" target="_blank" rel="noopener">PCPSR Oct 2025</a> · <a href="https://www.pcpsr.org/en/node/1014" target="_blank" rel="noopener">PCPSR Aug 2026</a></p></figure><figure class="chart"><h3>Hate crimes against Jews in the US</h3><p class="take">2.4% of Americans. 63% of religion-based hate crimes.</p><div class="bars"><div class="b"><span class="l">Share of people</span><span class="t"><i class="lo" style="width:2.40%"></i></span><span class="v">2.4%</span></div><div class="b"><span class="l">Share of hate crimes</span><span class="t"><i class="red" style="width:63.00%"></i></span><span class="v">63%</span></div></div><p class="src"><a href="https://www.adl.org/resources/press-release/2025-marked-third-highest-year-record-anti-jewish-hate-crimes-fbi-reports" target="_blank" rel="noopener">FBI 2025 data via ADL</a> · <a href="https://www.pewresearch.org/religion/2021/05/11/jewish-americans-in-2020/" target="_blank" rel="noopener">Pew</a></p></figure><figure class="chart"><h3>Jews in the world, 1939 to today</h3><p class="take">80 years after the Holocaust, still fewer Jews than in 1939.</p><div class="bars"><div class="b"><span class="l">1939</span><span class="t"><i class="lo" style="width:100.00%"></i></span><span class="v">16.5M</span></div><div class="b"><span class="l">1945</span><span class="t"><i class="red" style="width:66.67%"></i></span><span class="v">11.0M</span></div><div class="b"><span class="l">2025</span><span class="t"><i class="hi" style="width:95.76%"></i></span><span class="v">15.8M</span></div></div><p class="src"><a href="https://www.cbs.gov.il/he/Documents/World%20DellaPergola%202024%20complete.pdf" target="_blank" rel="noopener">DellaPergola, American Jewish Year Book 2024</a></p></figure></section>
+
+<p class="kicker" id="arguments">Answers</p>
+<h2>What you'll hear, and what to say</h2>
+
+<article class="arg">
+  <div class="big">2029<small>earliest court ruling</small></div>
+  <p class="claim">"Israel is committing genocide."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">No court has found genocide. Genocide means intent to destroy a people. Israel's war aim is to defeat Hamas.</p>
+  <div class="body"><ul>
+    <li>The world court's case is still in written pleadings; Israel's final filing is due 22 May 2029. <a href="https://www.icj-cij.org/case/192" target="_blank" rel="noopener">ICJ</a></li>
+    <li>The court's president at the time: the "plausible genocide" headline "isn't what the court decided." <a href="https://www.sajr.co.za/media-misrepresenting-icj-ruling-says-retired-judge/" target="_blank" rel="noopener">Judge Donoghue</a></li>
+    <li>"86% of genocide scholars": only 28% of the association's roughly 500 members voted. <a href="https://genocidescholars.org/reactions-to-iags-resolution-on-gaza/" target="_blank" rel="noopener">IAGS</a></li>
+  </ul>
+  <p class="say"><b>If they say</b> "the UN said so": a Human Rights Council panel said so. It is not a court, and the UN's own court has not ruled.</p></div>
+</article>
+
+<article class="arg">
+  <div class="big">695<small>Israeli civilians murdered</small></div>
+  <p class="claim">"October 7 was resistance," or "Israel killed its own people."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">Hamas went house to house murdering civilians. That is a massacre, not resistance.</p>
+  <div class="body"><ul>
+    <li>Israel's social security data: 695 Israeli civilians killed, including 36 children; the youngest was 10 months old. <a href="https://www.france24.com/en/live-news/20231215-israel-social-security-data-reveals-true-picture-of-oct-7-deaths" target="_blank" rel="noopener">AFP</a></li>
+    <li>The IDF's own probe found friendly fire only "in a handful of cases." <a href="https://www.timesofisrael.com/767-troops-faced-5000-terrorists-gaza-division-was-overrun-for-hours-idf-oct-7-probe/" target="_blank" rel="noopener">Times of Israel</a></li>
+    <li>251 people were dragged into Gaza; 85 came home in coffins. <a href="https://abc7news.com/post/body-last-remaining-hostage-retrieved-gaza-israel-says/18479257/" target="_blank" rel="noopener">ABC</a></li>
+  </ul>
+  <p class="say"><b>If they say</b> "it didn't happen in a vacuum": 53% of Palestinians still called the attack "correct" in October 2025. <a href="https://www.pcpsr.org/sites/default/files/Poll%2096%20press%20release%20FINAL%20ENGLISH%2028%20Oct%202025.pdf" target="_blank" rel="noopener">PCPSR</a></p></div>
+</article>
+
+<article class="arg">
+  <div class="big">Art. 7<small>"killing the Jews"</small></div>
+  <p class="claim">"Hamas is a resistance movement."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">Hamas's charter calls for killing Jews, and its leaders promise to repeat October 7.</p>
+  <div class="body"><ul>
+    <li>Charter, Article 7: "The Day of Judgement will not come about until Moslems fight the Jews (killing the Jews)." <a href="https://avalon.law.yale.edu/20th_century/hamas.asp" target="_blank" rel="noopener">Yale Avalon</a></li>
+    <li>Ghazi Hamad, Hamas politburo, 24 Oct 2023: "we will do it twice and three times." <a href="https://www.timesofisrael.com/liveblog_entry/hamas-official-says-group-will-repeat-oct-7-attack-twice-and-three-times-to-destroy-israel/" target="_blank" rel="noopener">MEMRI translation</a></li>
+    <li>Iran funds it: "up to $100 million annually" to Hamas and allied terror groups. <a href="https://www.state.gov/wp-content/uploads/2023/02/Country_Reports_2021_Complete_MASTER.no_maps-011323-Accessible.pdf" target="_blank" rel="noopener">US State Dept</a></li>
+  </ul>
+  <p class="say"><b>If they say</b> "Hamas was elected": once, in 2006, with 44%. No legislative vote since. <a href="https://www.cfr.org/backgrounders/what-hamas" target="_blank" rel="noopener">CFR</a></p></div>
+</article>
+
+<article class="arg">
+  <div class="big">10%<small>of Palestinians want one equal state</small></div>
+  <p class="claim">"From the river to the sea just means equality."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">The river is the Jordan and the sea is the Mediterranean. In between is all of Israel.</p>
+  <div class="body"><ul>
+    <li>Hamas, 2017: it "rejects any alternative to the full and complete liberation of Palestine, from the river to the sea." <a href="https://web.archive.org/web/20170510123932/http://hamas.ps/en/post/678/" target="_blank" rel="noopener">Hamas document</a></li>
+    <li>Only 10% of Palestinians choose one shared state. <a href="https://www.pcpsr.org/en/node/1014" target="_blank" rel="noopener">PCPSR, Aug 2026</a></li>
+    <li>Of US students backing the chant, 47% could name the river and sea; after basic facts, 67.8% dropped it. <a href="https://helendillerinstitute.berkeley.edu/node/267" target="_blank" rel="noopener">Hassner, WSJ</a></li>
+  </ul></div>
+</article>
+
+<article class="arg">
+  <div class="big">4<small>offers, no acceptance</small></div>
+  <p class="claim">"Israel never wanted peace."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">Israel accepted partition in 1947 and offered statehood again in 2000 and 2008. Palestinian leaders said no.</p>
+  <div class="body"><ul>
+    <li>1947: the Jewish Agency accepted the UN plan; the Arab Higher Committee rejected it. <a href="https://www.un.org/unispal/document/auto-insert-202927/" target="_blank" rel="noopener">UN</a></li>
+    <li>2000: the Clinton Parameters offered 94 to 96% of the West Bank plus land swaps. The Second Intifada followed. <a href="https://web.archive.org/web/20110721145451/http://www.usembassy-israel.org.il/publish/peace/archives/2001/january/me0103b.html" target="_blank" rel="noopener">US Embassy</a></li>
+    <li>2008: Abbas admitted he rejected Olmert's offer. <a href="https://web.archive.org/web/20240101223609/https://www.timesofisrael.com/abbas-admits-he-rejected-2008-peace-offer-from-olmert/" target="_blank" rel="noopener">AP</a></li>
+  </ul></div>
+</article>
+
+<article class="arg">
+  <div class="big">0<small>Israelis in Gaza, 2005–2023</small></div>
+  <p class="claim">"Gaza was an open-air prison under occupation."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">Israel left Gaza in 2005. Hamas took over in 2007 and chose tunnels and rockets over building a state.</p>
+  <div class="body"><ul>
+    <li>2005: all 21 settlements removed, about 8,500 to 9,000 settlers and every soldier. <a href="https://www.britannica.com/event/Israels-disengagement-from-Gaza" target="_blank" rel="noopener">Britannica</a></li>
+    <li>2007: "Hamas routed Fatah's militias in a week of fighting." <a href="https://www.cfr.org/backgrounders/what-hamas" target="_blank" rel="noopener">CFR</a></li>
+    <li>World court judge Cleveland: Israel "did not exercise effective control over most of the day-to-day government administration" of Gaza. Hamas did. <a href="https://www.un.org/unispal/wp-content/uploads/2024/07/186-20240719-adv-01-13-en.pdf" target="_blank" rel="noopener">ICJ</a></li>
+  </ul></div>
+</article>
+
+<article class="arg">
+  <div class="big">48%<small>of Israeli Jews are Mizrahi or Sephardi</small></div>
+  <p class="claim">"Jews are white European colonizers."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">You cannot colonize your own homeland. Half of Israel's Jews come from the Middle East and North Africa.</p>
+  <div class="body"><ul>
+    <li>Israeli Jews: 48% Mizrahi or Sephardi, 45% Ashkenazi. <a href="https://www.pewresearch.org/wp-content/uploads/sites/20/2016/03/Israel-Survey-Full-Report.pdf" target="_blank" rel="noopener">Pew</a></li>
+    <li>About 850,000 Jews lived in Arab countries in 1948; 820,000 had left by 1972. <a href="https://jewishvirtuallibrary.org/jewish-refugees-from-arab-countries" target="_blank" rel="noopener">JVL</a></li>
+    <li>Genetics "trace the origins of most Jewish Diaspora communities to the Levant." <a href="https://www.nature.com/articles/nature09103" target="_blank" rel="noopener">Nature, 2010</a></li>
+  </ul></div>
+</article>
+
+<article class="arg">
+  <div class="big">21%<small>of Israel is Arab</small></div>
+  <p class="claim">"Israel is an apartheid state."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">Under apartheid, Black South Africans could not vote. Israel's Arab citizens vote, sit in the Knesset and serve on its Supreme Court.</p>
+  <div class="body"><ul>
+    <li>Israel is 21.1% Arab. <a href="https://www.cbs.gov.il/he/mediarelease/DocLib/2023/424/11_23_424b.pdf" target="_blank" rel="noopener">Israel CBS</a></li>
+    <li>13 of 120 Knesset members are Arab. <a href="https://en.globes.co.il/en/article-poll-1001551756" target="_blank" rel="noopener">Globes</a></li>
+    <li>Khaled Kabub became Israel's first permanent Muslim Supreme Court justice in 2022. <a href="https://www.haaretz.com/israel-news/2017-08-03/ty-article/israels-first-arab-supreme-court-justice-retiring/0000017f-edff-da6f-a77f-fdff6d6b0000" target="_blank" rel="noopener">Haaretz</a></li>
+  </ul></div>
+</article>
+
+<article class="arg">
+  <div class="big">Homes<small>where hostages were held</small></div>
+  <p class="claim">"Hamas uses human shields."</p>
+  <div><span class="pill t">TRUE</span></div>
+  <p class="answer">Hamas hid hostages among families and says protecting Gaza's civilians isn't its job.</p>
+  <div class="body"><ul>
+    <li>Freed hostages were held "in private residential buildings with Palestinian families," even the UN reports. <a href="https://www.ohchr.org/sites/default/files/documents/countries/opt/20241106-Gaza-Update-Report-OPT.pdf" target="_blank" rel="noopener">UN record</a></li>
+    <li>Hamas's Moussa Abu Marzouk: the tunnels are for fighters, not civilians. <a href="https://www.timesofisrael.com/top-hamas-official-claims-group-is-not-responsible-for-defending-gazan-civilians/" target="_blank" rel="noopener">Times of Israel</a></li>
+  </ul></div>
+</article>
+
+<article class="arg">
+  <div class="big">87%<small>of UN aid trucks intercepted</small></div>
+  <p class="claim">"Israel is starving Gaza on purpose."</p>
+  <div><span class="pill m">MISLEADING</span></div>
+  <p class="answer">Aid went in and was intercepted before reaching people. The famine finding admits it never measured deaths.</p>
+  <div class="body"><ul>
+    <li>The famine report itself: 87% of UN trucks "reportedly intercepted" en route. <a href="https://civil-protection-humanitarian-aid.ec.europa.eu/system/files/2025-08/IPC_Gaza_Strip_Acute_Food_Insecurity_Malnutrition_July_Sept2025_Special_Snapshot.pdf" target="_blank" rel="noopener">IPC</a></li>
+    <li>Its data: phone surveys and arm-band screenings. Mortality was inferred, not measured. <a href="https://civil-protection-humanitarian-aid.ec.europa.eu/system/files/2025-08/IPC_Gaza_Strip_Acute_Food_Insecurity_Malnutrition_July_Sept2025_Special_Snapshot.pdf" target="_blank" rel="noopener">IPC</a></li>
+    <li>Israel's aid authority: crossings reopened 19 May 2025, with no ban on UN aid. <a href="https://ed6eeb20-67a7-48ca-8cc0-69b6bb68a91f.usrfiles.com/ugd/ed6eeb_dfe3644f61aa40fc86456106ce4ce70d.pdf" target="_blank" rel="noopener">COGAT</a></li>
+  </ul>
+  <p class="say"><b>If they say</b> "Israel closed the crossings in 2025": it paused them for about eleven weeks, then reopened them on 19 May.</p></div>
+</article>
+
+<article class="arg">
+  <div class="big">2.4%<small>of Americans are Jewish</small></div>
+  <p class="claim">"Jews control America," or "AIPAC buys Congress."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">Jews are 2.4% of Americans. The biggest foreign money in US universities is Qatar's.</p>
+  <div class="body"><ul>
+    <li>Americans guess 30% of the country is Jewish. The real figure is 2.4%. <a href="https://jweekly.com/2022/03/17/in-wild-overestimate-americans-think-30-of-the-country-is-jewish/" target="_blank" rel="noopener">YouGov</a> · <a href="https://www.pewresearch.org/religion/2021/05/11/jewish-americans-in-2020/" target="_blank" rel="noopener">Pew</a></li>
+    <li>In Massie's 2026 loss, the top outside spender was MAGA KY ($7.48M), not AIPAC's PAC ($4.16M). <a href="https://www.fec.gov/files/bulk-downloads/2026/independent_expenditure_2026.csv" target="_blank" rel="noopener">FEC</a></li>
+    <li>Qatar is the #1 foreign source of US university money: $6.57 billion. <a href="https://fsapartners.ed.gov/sites/default/files/2025-05/Sec117PublicRecordsCompleteFeb2025.xlsx" target="_blank" rel="noopener">US Dept of Education</a></li>
+  </ul></div>
+</article>
+
+<article class="arg">
+  <div class="big">9<small>UNRWA staff fired over Oct 7</small></div>
+  <p class="claim">"UNRWA is a neutral aid agency."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">The UN's own investigators found UNRWA staff may have joined the October 7 attack.</p>
+  <div class="body"><ul>
+    <li>UN investigators: nine UNRWA staff "may have been involved in the 7 October attacks." All nine were fired. <a href="https://news.un.org/en/story/2024/08/1152841" target="_blank" rel="noopener">UN</a></li>
+    <li>UNRWA counts "nearly 5.9 million" Palestine refugees, because the status passes to descendants forever. <a href="https://www.un.org/unispal/document/pga-remarks-unrwa-pledging-conference/" target="_blank" rel="noopener">UN, 2026</a></li>
+  </ul></div>
+</article>
+
+<article class="arg">
+  <div class="big">63%<small>of US religious hate crimes</small></div>
+  <p class="claim">"Anti-Zionism isn't antisemitism."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">Denying Jews alone a state, and calling them Nazis for defending it, is antisemitism. The hate-crime numbers show where it leads.</p>
+  <div class="body"><ul>
+    <li>2025: 1,528 of 2,408 religion-based hate crimes in the US targeted Jews. <a href="https://www.adl.org/resources/press-release/2025-marked-third-highest-year-record-anti-jewish-hate-crimes-fbi-reports" target="_blank" rel="noopener">FBI data via ADL</a></li>
+    <li>The international definition lists "comparisons of contemporary Israeli policy to that of the Nazis" as antisemitism. <a href="https://www.state.gov/defining-antisemitism/" target="_blank" rel="noopener">US State Dept</a></li>
+    <li>Criticism of Israel "similar to that leveled against any other country" is fair. A standard applied only to the Jewish state is not. <a href="https://www.state.gov/defining-antisemitism/" target="_blank" rel="noopener">IHRA</a></li>
+  </ul></div>
+</article>
+
+<p class="kicker" id="words">In their own words</p>
+<h2>Hamas, quoted directly</h2>
+<section class="quotes">
+  <blockquote>"The Day of Judgement will not come about until Moslems fight the Jews (killing the Jews)."<cite>Hamas Charter, Article 7, 1988 · <a href="https://avalon.law.yale.edu/20th_century/hamas.asp" target="_blank" rel="noopener">Yale Avalon Project</a></cite></blockquote>
+  <blockquote>"Hamas rejects any alternative to the full and complete liberation of Palestine, from the river to the sea."<cite>Hamas policy document, 2017 · <a href="https://web.archive.org/web/20170510123932/http://hamas.ps/en/post/678/" target="_blank" rel="noopener">hamas.ps, archived</a></cite></blockquote>
+  <blockquote>"We will do it twice and three times."<cite>Ghazi Hamad, Hamas politburo, on repeating October 7, 24 Oct 2023 · <a href="https://www.timesofisrael.com/liveblog_entry/hamas-official-says-group-will-repeat-oct-7-attack-twice-and-three-times-to-destroy-israel/" target="_blank" rel="noopener">MEMRI translation</a></cite></blockquote>
+</section>
+
+<footer>Sources: court records, government statistics, official documents, Hamas's own texts, Palestinian polling and peer-reviewed research. October 2026.</footer>
+</div>
+
+<script>
+document.querySelectorAll('.arg').forEach(function (a) {
+  var b = document.createElement('button'); b.type = 'button'; b.className = 'copy'; b.textContent = 'Copy this answer';
+  b.addEventListener('click', function () {
+    var lines = [a.querySelector('.claim').textContent, a.querySelector('.answer').textContent];
+    a.querySelectorAll('li').forEach(function (li) {
+      var link = li.querySelector('a'); var t = li.cloneNode(true); t.querySelectorAll('a').forEach(function (x) { x.remove(); });
+      lines.push('• ' + t.textContent.trim().replace(/\s*·\s*$/, '') + (link ? ' ' + link.href : ''));
+    });
+    var text = lines.join('\n');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy this answer'; }, 1600); }
+    function fallback() { var ta = document.createElement('textarea'); ta.value = text; ta.rows = 6; ta.style.width = '100%'; a.querySelector('.body').appendChild(ta); ta.select(); b.textContent = 'Select the text and copy'; }
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+  a.querySelector('.body').appendChild(b);
+});
+</script>
+<script>
+(function(){
+var Q=[{"q": "About how many Jews are there in the world?", "o": ["About 1.5 million", "About 16 million", "About 160 million", "About 450 million"], "a": 1, "x": "About 15.8 million in 2025, roughly 0.2% of humanity. Guesses run far higher: in a 2022 YouGov poll, Americans guessed 30% of the US is Jewish. The real share is about 2.4%.", "s": [{"t": "Institute for Jewish Policy Research (Sergio DellaPergola)", "u": "https://www.jpr.org.uk/reports/jewish-people-2126-demography-identity-and-future-global-minority"}, {"t": "J. The Jewish News of Northern California (reporting a YouGov poll)", "u": "https://jweekly.com/2022/03/17/in-wild-overestimate-americans-think-30-of-the-country-is-jewish/"}, {"t": "Pew Research Center", "u": "https://www.pewresearch.org/religion/2021/05/11/jewish-americans-in-2020/"}]}, {"q": "Israel is closest in size to which US state?", "o": ["Texas", "California", "New Jersey", "Florida"], "a": 2, "x": "Israel's surface area is about 22,070 square kilometers. New Jersey's is about 22,590.", "s": [{"t": "World Bank", "u": "https://data.worldbank.org/indicator/AG.SRF.TOTL.K2?locations=IL"}, {"t": "US Census Bureau", "u": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"}]}, {"q": "In 1939 there were about 16.5 million Jews. Has the world's Jewish population recovered since the Holocaust?", "o": ["Yes, it has doubled", "Yes, it is about 25 million", "No, it is still below 1939, at about 15.8 million", "No, it is about 5 million"], "a": 2, "x": "Six million Jews were murdered in the Holocaust. Eighty-five years later, the world's Jewish population is still below its 1939 size.", "s": [{"t": "Institute for Jewish Policy Research (Sergio DellaPergola)", "u": "https://www.jpr.org.uk/reports/jewish-people-2126-demography-identity-and-future-global-minority"}, {"t": "US Holocaust Memorial Museum", "u": "https://encyclopedia.ushmm.org/content/en/article/documenting-numbers-of-victims-of-the-holocaust-and-nazi-persecution"}]}, {"q": "When did Rome make 'Syria Palaestina' the official name of the province of Judaea?", "o": ["Before Jesus was born", "After crushing a Jewish revolt, around 135 CE", "During the Arab conquest of the 630s", "Under British rule in 1920"], "a": 1, "x": "Greek writers used the word for the coast centuries earlier. Rome made it the province's official name after crushing the Bar Kokhba revolt, replacing 'Judaea', and barred Jews from Jerusalem.", "s": [{"t": "Encyclopaedia Britannica", "u": "https://www.britannica.com/place/Palestine/Roman-Palestine"}, {"t": "Perseus Digital Library, Tufts University", "u": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=7:chapter=89"}]}, {"q": "About what share of Israeli Jews have family roots in the Middle East and North Africa rather than Europe?", "o": ["Under 10%", "About a quarter", "About half", "Over 90%"], "a": 2, "x": "Pew found Israeli Jews roughly evenly divided between Ashkenazi (European) and Sephardi or Mizrahi roots.", "s": [{"t": "Pew Research Center", "u": "https://www.pewresearch.org/religion/2016/03/08/israels-religiously-divided-society/"}]}, {"q": "Between 2005 and October 7, 2023, how many Israeli settlers or soldiers were stationed inside Gaza?", "o": ["About 500,000", "About 50,000", "A few thousand soldiers", "None"], "a": 3, "x": "In 2005 Israel removed all 21 Gaza settlements, about 8,500 to 9,000 settlers, and every soldier. Hamas seized Gaza in 2007 and fired rockets instead of building a state.", "s": [{"t": "Encyclopaedia Britannica", "u": "https://www.britannica.com/event/Israels-disengagement-from-Gaza"}]}, {"q": "On October 7, 2023, how many Israeli civilians did Hamas kill?", "o": ["About 100", "About 300", "About 700", "None; it was a military raid"], "a": 2, "x": "Israel's social security data: 695 Israeli civilians, including 36 children. The youngest was 10 months old. Another 251 people were taken hostage.", "s": [{"t": "AFP", "u": "https://www.france24.com/en/live-news/20231215-israel-social-security-data-reveals-true-picture-of-oct-7-deaths"}]}, {"q": "Has the International Court of Justice ruled that Israel committed genocide?", "o": ["Yes, in January 2024", "Yes, in 2025", "No. It ordered interim measures; the main case is still in written pleadings", "No. It dismissed the case"], "a": 2, "x": "In 2024 the court ordered Israel to prevent genocidal acts and let aid in. It has not ruled on the merits; written pleadings run to 2029. Its then-president said it never decided genocide was plausible.", "s": [{"t": "International Court of Justice", "u": "https://www.icj-cij.org/case/192"}, {"t": "South African Jewish Report", "u": "https://www.sajr.co.za/media-misrepresenting-icj-ruling-says-retired-judge/"}]}, {"q": "The chant 'from the river to the sea' refers to which river and which sea?", "o": ["The Nile and the Red Sea", "The Jordan River and the Mediterranean Sea", "The Euphrates and the Persian Gulf", "The Tigris and the Dead Sea"], "a": 1, "x": "That span is all of Israel plus the West Bank and Gaza. Hamas's own 2017 document rejects 'any alternative to the full and complete liberation of Palestine, from the river to the sea.'", "s": [{"t": "Hamas (official site, archived)", "u": "https://web.archive.org/web/20170510123932/http://hamas.ps/en/post/678/"}]}, {"q": "The 'All Eyes on Rafah' image, shared tens of millions of times, was what?", "o": ["A drone photo", "A UN photo", "An AI-generated image", "A satellite image"], "a": 2, "x": "It was made with AI and spread by tens of millions of accounts. A viral picture is not evidence. Ask where an image comes from before you share it.", "s": [{"t": "NPR via WUSF", "u": "https://www.wusf.org/2024-06-03/2-artists-claim-credit-for-all-eyes-on-rafah-the-internets-most-viral-ai-image"}]}];
+var box=document.getElementById('quizbox'); if(!box) return;
+var i=0, score=0, answered=false;
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function dots(){var h='<div class="dots">';for(var k=0;k<Q.length;k++)h+='<span class="'+(k<i?'done':'')+'"></span>';return h+'</div>';}
+function render(){
+  if(i>=Q.length){box.innerHTML='<p class="qn">Your score</p><p class="score">'+score+' of '+Q.length+'</p><p class="ex">If some answers surprised you, you are not alone. Most of this is never taught, and feeds reward what is fast and emotional. Scroll down for the history, the moral case and the numbers.</p><div class="nav"><button type="button" class="next" id="qagain">Start over</button></div>';
+    document.getElementById('qagain').onclick=function(){i=0;score=0;render();};return;}
+  var q=Q[i]; answered=false;
+  var h='<div class="nav"><span class="qn">Question '+(i+1)+' of '+Q.length+'</span>'+dots()+'</div><p class="qq">'+esc(q.q)+'</p><div class="opts">';
+  q.o.forEach(function(o,k){h+='<button type="button" class="opt" data-k="'+k+'">'+esc(o)+'</button>';});
+  h+='</div><div id="qex"></div>'; box.innerHTML=h;
+  box.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){pick(+b.getAttribute('data-k'));};});
+}
+function pick(k){
+  if(answered) return; answered=true; var q=Q[i];
+  if(k===q.a) score++;
+  box.querySelectorAll('.opt').forEach(function(b){var kk=+b.getAttribute('data-k'); if(kk===q.a) b.classList.add('right'); else if(kk===k) b.classList.add('wrong'); b.disabled=true;});
+  var src=q.s.map(function(x){return '<a href="'+esc(x.u)+'" target="_blank" rel="noopener">'+esc(x.t)+'</a>';}).join(' · ');
+  document.getElementById('qex').innerHTML='<p class="ex"><b>'+(k===q.a?'Right. ':'Not quite. ')+'</b>'+esc(q.x)+' '+src+'</p><div class="nav"><span></span><button type="button" class="next" id="qnext">'+(i+1<Q.length?'Next question':'See your score')+'</button></div>';
+  document.getElementById('qnext').onclick=function(){i++;render();box.scrollIntoView({block:'start'});};
+}
+render();
+})();
+</script>
+</body>
+</html>
