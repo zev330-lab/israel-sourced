@@ -1,0 +1,24 @@
+{
+  "name": "Israel, Sourced",
+  "short_name": "Sourced",
+  "description": "A source-linked guide and quiz",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#f4f6fa",
+  "theme_color": "#172b45",
+  "icons": [
+    {
+      "src": "app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

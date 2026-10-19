@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-labelledby="title">
+  <title id="title">Israel, Sourced app icon</title>
+  <rect width="192" height="192" rx="40" fill="#172b45"/>
+  <path d="M51 29h65l25 25v100a9 9 0 0 1-9 9H51a9 9 0 0 1-9-9V38a9 9 0 0 1 9-9Z" fill="#fff"/>
+  <path d="M116 29v22a7 7 0 0 0 7 7h18" fill="#d7e8ed"/>
+  <path d="M62 77h58M62 95h51M62 113h36" fill="none" stroke="#326e80" stroke-linecap="round" stroke-width="8"/>
+  <circle cx="124" cy="123" r="27" fill="#172b45" stroke="#fff" stroke-width="7"/>
+  <circle cx="124" cy="123" r="15" fill="none" stroke="#8ed0d1" stroke-width="7"/>
+  <path d="m144 143 18 18" fill="none" stroke="#8ed0d1" stroke-linecap="round" stroke-width="9"/>
+</svg>
