@@ -145,21 +145,13 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
 .lie li{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;display:grid;gap:6px}
 .lie li.now{border-color:var(--false)}
 .lie .yr{font-family:var(--serif);font-weight:800;font-size:1.05rem}
-.lie .row{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:10px;font-size:.95rem}
+.lie .row{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:10px;font-size:.95rem}
 .lie .row b{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px;line-height:1.3}
 .lie .row.acc span{font-weight:700}
 .lie a,.habits a,.reads a.s{font-size:.8rem;white-space:nowrap}
 .credit{font-size:.82rem;color:var(--muted);margin:0}
 .credit a{color:var(--muted)}
-.sub{font-family:var(--serif);font-weight:800;font-size:1.2rem;line-height:1.2;margin:10px 0 0;text-wrap:balance}
-.pairs{list-style:none;margin:0;padding:0;background:var(--card);border:1px solid var(--rule);border-radius:12px;display:grid}
-.pairs li{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:baseline;column-gap:10px;row-gap:2px;padding:10px 16px;border-top:1px solid var(--rule)}
-.pairs li:first-child{border-top:0}
-.pairs .x,.pairs .y{font-weight:700;font-size:.98rem}
-.pairs .y{color:var(--false)}
-.pairs .then{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.pairs .by{grid-column:1 / -1;font-size:.78rem;color:var(--muted)}
-.pairs .by a{color:var(--muted)}
+.lie .row.flip span{color:var(--false);font-weight:600}
 /* before you answer */
 .habits{background:var(--accent-soft);border-radius:12px;padding:16px;display:grid;gap:10px}
 .habits h3{margin:0;font-size:1.05rem}
@@ -239,36 +231,33 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
 
 <p class="kicker" id="lie">The pattern</p>
 <h2>The oldest lie, and how to spot it</h2>
-<p class="intro">Dara Horn argues that antisemitism is less a prejudice than one recurring lie. In her words: "The lie is always the same: Jews are destroying what you value the most." <a href="https://jewishinsider.com/2026/08/dara-horn-the-final-solution-antisemitism-bookshelf/" target="_blank" rel="noopener">Jewish Insider, 2026</a> The accusation changes to fit whatever each era holds sacred.</p>
+<p class="intro">Dara Horn argues that antisemitism is less a prejudice than one recurring lie. In her words: "The lie is always the same: Jews are destroying what you value the most." <a href="https://jewishinsider.com/2026/08/dara-horn-the-final-solution-antisemitism-bookshelf/" target="_blank" rel="noopener">Jewish Insider, 2026</a></p>
+<p class="intro">History bears her out. Rabbi Jonathan Sacks traced it across a thousand years: "In the Middle Ages, Jews were hated because of their religion. In the nineteenth and early twentieth century they were hated because of their race. Today they are hated because of their nation state." <a href="https://www.jcrelations.net/articles/article/the-mutating-virus-understanding-anti-semitism.html" target="_blank" rel="noopener">Sacks, European Parliament, 2016</a> Douglas Murray named the giveaway: "They've been hated for being rich and for being poor." <a href="https://legalinsurrection.com/2024/06/the-only-real-tolerated-form-of-antisemitism-is-anti-zionism" target="_blank" rel="noopener">Munk Debate, 2024, via transcript</a> Whatever an era valued most, Jews were cast as its enemy, and when the value flipped, the charge flipped with it.</p>
 <ol class="lie">
-  <li><span class="yr">1144, England</span>
-    <div class="row"><b>Held sacred</b><span>Christian faith</span></div>
-    <div class="row acc"><b>The lie</b><span>Jews ritually murder Christian children at Passover. The first recorded case was William of Norwich. <a href="https://www.britannica.com/EBchecked/topic/69715/blood-libel" target="_blank" rel="noopener">Britannica</a></span></div></li>
-  <li><span class="yr">1903, Russia</span>
-    <div class="row"><b>Held sacred</b><span>Throne and national order</span></div>
-    <div class="row acc"><b>The lie</b><span>A secret Jewish council plots "to dominate the world." The Protocols were a forgery. <a href="https://encyclopedia.ushmm.org/narrative/10552/en" target="_blank" rel="noopener">USHMM</a></span></div></li>
+  <li><span class="yr">Middle Ages</span>
+    <div class="row"><b>Held sacred</b><span>Religion</span></div>
+    <div class="row acc"><b>The lie</b><span>Jews ritually murder Christian children. The first recorded case was William of Norwich, England, 1144. <a href="https://www.britannica.com/EBchecked/topic/69715/blood-libel" target="_blank" rel="noopener">Britannica</a></span></div>
+    <div class="row flip"><b>And the opposite</b><span>Hated for clinging to an old faith, and later as "rootless cosmopolitans" who believed nothing. <a href="https://rabbisacks.org/quotes/hatred-of-jews/" target="_blank" rel="noopener">Sacks</a></span></div></li>
   <li><span class="yr">1875–1945, Europe</span>
-    <div class="row"><b>Held sacred</b><span>Race and the nation's blood</span></div>
-    <div class="row acc"><b>The lie</b><span>Jews are "polluting" pure Aryan blood. <a href="https://encyclopedia.ushmm.org/content/en/article/antisemitism-in-history-racial-antisemitism-18751945" target="_blank" rel="noopener">USHMM</a></span></div></li>
+    <div class="row"><b>Held sacred</b><span>Science, race and the nation's blood</span></div>
+    <div class="row acc"><b>The lie</b><span>Jews are "polluting" pure Aryan blood. <a href="https://encyclopedia.ushmm.org/content/en/article/antisemitism-in-history-racial-antisemitism-18751945" target="_blank" rel="noopener">USHMM</a></span></div>
+    <div class="row flip"><b>And the opposite</b><span>Hated for keeping apart, and for integrating. <a href="https://legalinsurrection.com/2024/06/the-only-real-tolerated-form-of-antisemitism-is-anti-zionism" target="_blank" rel="noopener">Murray</a> · <a href="https://rabbisacks.org/quotes/hatred-of-jews/" target="_blank" rel="noopener">Sacks</a></span></div></li>
+  <li><span class="yr">1903–1948</span>
+    <div class="row"><b>Held sacred</b><span>The nation</span></div>
+    <div class="row acc"><b>The lie</b><span>A stateless people plotting "to dominate the world." The Protocols were a forgery. <a href="https://encyclopedia.ushmm.org/narrative/10552/en" target="_blank" rel="noopener">USHMM</a></span></div>
+    <div class="row flip"><b>And the opposite</b><span>"They were hated for being stateless." Once Israel existed, "now they're hated for having a state." <a href="https://legalinsurrection.com/2024/06/the-only-real-tolerated-form-of-antisemitism-is-anti-zionism" target="_blank" rel="noopener">Murray</a></span></div></li>
   <li><span class="yr">20th century</span>
     <div class="row"><b>Held sacred</b><span>Capitalism, or communism</span></div>
-    <div class="row acc"><b>The lie</b><span>"If capitalism was evil, Jews were capitalists; if communism was evil, Jews were communists." <a href="https://www.theatlantic.com/ideas/archive/2024/02/jewish-anti-semitism-harvard-claudine-gay-zionism/677454/" target="_blank" rel="noopener">Horn, The Atlantic</a></span></div></li>
+    <div class="row acc"><b>The lie</b><span>"If capitalism was evil, Jews were capitalists; if communism was evil, Jews were communists." <a href="https://www.theatlantic.com/ideas/archive/2024/02/jewish-anti-semitism-harvard-claudine-gay-zionism/677454/" target="_blank" rel="noopener">Horn, The Atlantic</a></span></div>
+    <div class="row flip"><b>And the opposite</b><span>Hated for being rich, and for being poor. <a href="https://legalinsurrection.com/2024/06/the-only-real-tolerated-form-of-antisemitism-is-anti-zionism" target="_blank" rel="noopener">Murray</a> · <a href="https://rabbisacks.org/quotes/hatred-of-jews/" target="_blank" rel="noopener">Sacks</a></span></div></li>
   <li class="now"><span class="yr">1975 to today</span>
     <div class="row"><b>Held sacred</b><span>Human rights, anti-racism, anti-colonialism</span></div>
-    <div class="row acc"><b>The lie</b><span>Jews are colonizers, and the Jewish state is uniquely racist and genocidal. The UN said "Zionism is a form of racism" in 1975 and repealed it in 1991. <a href="https://www.jta.org/archive/u-n-votes-111-25-to-rescind-odious-resolution-on-zionism" target="_blank" rel="noopener">JTA</a> · <a href="#arguments">Today's versions, answered</a></span></div></li>
+    <div class="row acc"><b>The lie</b><span>Jews are colonizers, and the Jewish state is uniquely racist and genocidal. The UN said "Zionism is a form of racism" in 1975 and repealed it in 1991. <a href="https://www.jta.org/archive/u-n-votes-111-25-to-rescind-odious-resolution-on-zionism" target="_blank" rel="noopener">JTA</a> · <a href="#arguments">Today's versions, answered</a></span></div>
+    <div class="row flip"><b>And the opposite</b><span>Once condemned as a people with no land, now condemned as colonizers of the land they have.</span></div></li>
 </ol>
-<h3 class="sub" id="pairsH">Hated for one thing, and for its opposite</h3>
-<p class="intro">Douglas Murray put it this way in a 2024 debate: "the Jews can never win because historically they've been hated for being rich and for being poor." <a href="https://legalinsurrection.com/2024/06/the-only-real-tolerated-form-of-antisemitism-is-anti-zionism" target="_blank" rel="noopener">Munk Debate, via transcript</a> Rabbi Jonathan Sacks made the same list in 2015: "Jews were hated in Germany because they were rich and because they were poor." <a href="https://rabbisacks.org/quotes/hatred-of-jews/" target="_blank" rel="noopener">Sacks, Not in God's Name</a></p>
-<ul class="pairs">
-  <li><span class="x">For being poor</span><span class="then">and</span><span class="y">For being rich</span><span class="by"><a href="https://legalinsurrection.com/2024/06/the-only-real-tolerated-form-of-antisemitism-is-anti-zionism" target="_blank" rel="noopener">Murray</a> · <a href="https://rabbisacks.org/quotes/hatred-of-jews/" target="_blank" rel="noopener">Sacks</a></span></li>
-  <li><span class="x">As communists</span><span class="then">and</span><span class="y">As capitalists</span><span class="by"><a href="https://rabbisacks.org/quotes/hatred-of-jews/" target="_blank" rel="noopener">Sacks</a></span></li>
-  <li><span class="x">For keeping apart</span><span class="then">and</span><span class="y">For blending in</span><span class="by"><a href="https://legalinsurrection.com/2024/06/the-only-real-tolerated-form-of-antisemitism-is-anti-zionism" target="_blank" rel="noopener">Murray</a> · <a href="https://rabbisacks.org/quotes/hatred-of-jews/" target="_blank" rel="noopener">Sacks</a></span></li>
-  <li><span class="x">For an old faith</span><span class="then">and</span><span class="y">For believing nothing</span><span class="by"><a href="https://rabbisacks.org/quotes/hatred-of-jews/" target="_blank" rel="noopener">Sacks</a></span></li>
-  <li><span class="x">For having no state</span><span class="then">and</span><span class="y">For having one</span><span class="by"><a href="https://legalinsurrection.com/2024/06/the-only-real-tolerated-form-of-antisemitism-is-anti-zionism" target="_blank" rel="noopener">Murray</a></span></li>
-</ul>
-<p class="intro">Sacks also explained why today's charges sound like social justice. Each age, he said, justifies the hatred by its highest authority: religion in the Middle Ages, then science, and now human rights. "Today the highest source of authority worldwide is human rights." Applied to today, the charges become racism, apartheid, genocide and colonialism. <a href="https://www.jcrelations.net/articles/article/the-mutating-virus-understanding-anti-semitism.html" target="_blank" rel="noopener">Sacks, European Parliament, 2016</a></p>
+<p class="intro">Sacks explained why today's version sounds like social justice. Each age justifies the hatred by its highest authority: religion in the Middle Ages, science after the Enlightenment, and now human rights. "Today the highest source of authority worldwide is human rights." So Israel stands accused of what he called the five cardinal sins against human rights: "racism, apartheid, crimes against humanity, ethnic cleansing and attempted genocide." <a href="https://www.jcrelations.net/articles/article/the-mutating-virus-understanding-anti-semitism.html" target="_blank" rel="noopener">Sacks, European Parliament, 2016</a></p>
 <p class="credit">Often added to this list: hated for having no language, then for having one. We could not find a reliable source for that line, so it is not listed here.</p>
-<p class="credit">Why lead with the pattern: Horn's nonprofit, the Tell Institute, teaches students to recognize the Big Lie before they meet it, calling the approach "Prebunking, Not Debunking." <a href="https://www.thetellinstitute.org" target="_blank" rel="noopener">Tell Institute</a> The "held sacred" column is this site's reading of her pattern, not her own table.</p>
+<p class="credit">Why lead with the pattern: Horn's nonprofit, the Tell Institute, teaches students to recognize the Big Lie before they meet it, calling the approach "Prebunking, Not Debunking." <a href="https://www.thetellinstitute.org" target="_blank" rel="noopener">Tell Institute</a> The "held sacred" column, the era groupings, and the last "and the opposite" line are this site's reading of Horn, Sacks and Murray, not a table any of them drew.</p>
 
 <p class="kicker" id="moral">The moral case</p>
 <h2>Judge each side by what it wants and what it does</h2>
