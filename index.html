@@ -40,7 +40,7 @@ a{color:var(--accent)}
 .tile b{display:block;font-family:var(--serif);font-weight:900;font-size:1.7rem;line-height:1;color:#fff}
 .tile span{display:block;font-size:.78rem;color:#c8d6ee;margin-top:4px;line-height:1.3}
 .tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-@media (min-width:620px){.tools{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:620px){.tools{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .tools a{display:block;text-decoration:none;border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:10px 12px;min-height:44px;color:#fff}
 .tools a:hover,.tools a:focus-visible{background:rgba(255,255,255,.08);outline:2px solid #fff;outline-offset:1px}
 .tools b{display:block;font-size:.98rem}
@@ -57,6 +57,7 @@ nav.toc a:hover,nav.toc a:focus-visible{background:var(--accent-soft)}
 h2{font-family:var(--serif);font-weight:800;font-size:1.55rem;line-height:1.15;margin:18px 0 0;text-wrap:balance}
 .kicker{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:22px 0 -14px}
 .intro{color:var(--muted);margin:0}
+.intro a{font-size:.8rem;white-space:nowrap}
 /* timeline */
 .tl{list-style:none;margin:0;padding:0;border-left:3px solid var(--accent);display:grid;gap:14px}
 .tl li{position:relative;padding-left:18px}
@@ -139,6 +140,29 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
 .quiz .dots span{width:8px;height:8px;border-radius:50%;background:var(--rule)}
 .quiz .dots span.done{background:var(--accent)}
 .quiz .score{font-family:var(--serif);font-weight:900;font-size:2.4rem;margin:0}
+/* the oldest lie: one accusation, retargeted at whatever each era valued most */
+.lie{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.lie li{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;display:grid;gap:6px}
+.lie li.now{border-color:var(--false)}
+.lie .yr{font-family:var(--serif);font-weight:800;font-size:1.05rem}
+.lie .row{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:10px;font-size:.95rem}
+.lie .row b{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px;line-height:1.3}
+.lie .row.acc span{font-weight:700}
+.lie a,.habits a,.reads a.s{font-size:.8rem;white-space:nowrap}
+.credit{font-size:.82rem;color:var(--muted);margin:0}
+.credit a{color:var(--muted)}
+/* before you answer */
+.habits{background:var(--accent-soft);border-radius:12px;padding:16px;display:grid;gap:10px}
+.habits h3{margin:0;font-size:1.05rem}
+.habits ol{margin:0;padding-left:20px;display:grid;gap:8px;font-size:.95rem}
+.habits ol b{display:block}
+.habits a.inl{font-size:inherit;white-space:normal}
+/* go deeper */
+.reads{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.reads li{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 16px}
+.reads li.crit{background:transparent;border-style:dashed}
+.reads .t{font-family:var(--serif);font-weight:700;font-size:1.02rem;display:block}
+.reads p{margin:4px 0 0;font-size:.92rem;color:var(--muted)}
 
 @media (max-width:380px){.tiles b{font-size:1.4rem}.arg{grid-template-columns:1fr}.arg .big{grid-row:auto;text-align:left;margin-bottom:6px}.arg .big small{margin-inline:0}}
 </style>
@@ -158,27 +182,31 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
       <div id="section-links" class="section-links" hidden>
         <a href="#quiz">Take the quiz</a>
         <a href="#history">3,000 years</a>
+        <a href="#lie">The oldest lie</a>
         <a href="#moral">The moral case</a>
         <a href="#numbers">The charts</a>
         <a href="#arguments">Answers</a>
         <a href="#words">Hamas's words</a>
+        <a href="#deeper">Go deeper</a>
       </div>
     </nav>
   </div>
   <p>The case for Israel, built from history, logic, morality and primary records. Use it to check what you know, then to answer what you hear. Every line links to its source.</p>
   <div class="tools">
-    <a href="#quiz"><b>Take the quiz</b><span>10 quick questions, about 3 minutes</span></a>
+    <a href="#quiz"><b>Take the quiz</b><span>13 quick questions, about 4 minutes</span></a>
     <a href="#history"><b>3,000 years</b><span>The history in one minute</span></a>
+    <a href="#lie"><b>The oldest lie</b><span>Spot the pattern before the claim</span></a>
     <a href="#moral"><b>The moral case</b><span>What each side wants and does</span></a>
     <a href="#numbers"><b>The charts</b><span>The numbers that end arguments</span></a>
-    <a href="#arguments"><b>Answers</b><span>13 claims, answered and sourced</span></a>
+    <a href="#arguments"><b>Answers</b><span>14 claims, answered and sourced</span></a>
     <a href="#words"><b>Hamas's words</b><span>Their charter, in their language</span></a>
+    <a href="#deeper"><b>Go deeper</b><span>Dara Horn's work, and her critics</span></a>
   </div>
 </header>
 
 <p class="kicker" id="quiz">Quiz</p>
 <h2>How much do you know?</h2>
-<p class="intro">Eleven quick questions about Israel, its history and its neighbors. Nothing to sign up for, and no wrong way to take it. Every answer comes with a short explanation and a source, so you come away knowing a little more either way.</p>
+<p class="intro">Thirteen quick questions about Israel, its history and its neighbors. Nothing to sign up for, and no wrong way to take it. Every answer comes with a short explanation and a source, so you come away knowing a little more either way.</p>
 <section class="quiz" id="quizbox" aria-live="polite"></section>
 
 <p class="kicker" id="history">History</p>
@@ -190,13 +218,37 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
   <li class="dark"><span class="yr">c. 135 CE</span><p>After crushing a Jewish revolt, Rome renames Judaea "Syria Palaestina" and bars Jews from Jerusalem. "Palestine" was a name imposed by an empire. <a href="https://www.britannica.com/place/Palestine/Roman-Palestine" target="_blank" rel="noopener">Britannica</a></p></li>
   <li><span class="yr">c. 200–400 CE</span><p>Jews stay. The Mishnah and the Jerusalem Talmud are written in the Galilee. <a href="https://jewishvirtuallibrary.org/jsource/judaica/ejud_0002_0014_0_13999.html" target="_blank" rel="noopener">Encyclopaedia Judaica</a></p></li>
   <li><span class="yr">1922</span><p>The League of Nations recognizes "the historical connection of the Jewish people with Palestine" and the grounds for "reconstituting their national home." <a href="https://avalon.law.yale.edu/20th_century/palmanda.asp" target="_blank" rel="noopener">Mandate text</a></p></li>
+  <li class="dark"><span class="yr">1–2 Jun 1941</span><p>The Farhud: rioters in Baghdad murder between 150 and 180 Jews. Jews had lived in Iraq since the 6th century BCE. <a href="https://encyclopedia.ushmm.org/content/en/article/the-farhud" target="_blank" rel="noopener">USHMM</a></p></li>
   <li><span class="yr">1947</span><p>The UN offers two states. The Jewish Agency accepts. The Arab Higher Committee rejects, and Arab armies invade in 1948. <a href="https://documents.un.org/doc/resolution/gen/nr0/038/88/pdf/nr003888.pdf" target="_blank" rel="noopener">UN Res. 181</a></p></li>
   <li class="dark"><span class="yr">1948–1972</span><p>About 820,000 Jews leave or are driven from Arab countries. Most rebuild in Israel. <a href="https://jewishvirtuallibrary.org/jewish-refugees-from-arab-countries" target="_blank" rel="noopener">JVL</a></p></li>
+  <li class="dark"><span class="yr">1975</span><p>With Soviet-bloc backing, the UN General Assembly declares Zionism "a form of racism." It repeals the resolution in 1991, 111 to 25. <a href="https://www.jta.org/archive/u-n-votes-111-25-to-rescind-odious-resolution-on-zionism" target="_blank" rel="noopener">JTA</a></p></li>
   <li><span class="yr">2000 & 2008</span><p>Israel offers a Palestinian state twice more. No deal. Abbas later admits he rejected the 2008 offer. <a href="https://web.archive.org/web/20240101223609/https://www.timesofisrael.com/abbas-admits-he-rejected-2008-peace-offer-from-olmert/" target="_blank" rel="noopener">AP</a></p></li>
   <li><span class="yr">2005</span><p>Israel leaves Gaza entirely: 21 settlements, about 8,500 to 9,000 settlers, every soldier. <a href="https://www.britannica.com/event/Israels-disengagement-from-Gaza" target="_blank" rel="noopener">Britannica</a></p></li>
   <li class="dark"><span class="yr">2007</span><p>Hamas seizes Gaza by force. "Hamas routed Fatah's militias in a week of fighting." <a href="https://www.cfr.org/backgrounders/what-hamas" target="_blank" rel="noopener">CFR</a></p></li>
   <li class="dark"><span class="yr">7 Oct 2023</span><p>Hamas invades Israel, murders 695 Israeli civilians, 71 foreigners and 373 security personnel, and takes 251 hostages. <a href="https://www.france24.com/en/live-news/20231215-israel-social-security-data-reveals-true-picture-of-oct-7-deaths" target="_blank" rel="noopener">Israel's social security data (AFP)</a> · <a href="https://abc7news.com/post/body-last-remaining-hostage-retrieved-gaza-israel-says/18479257/" target="_blank" rel="noopener">ABC</a></p></li>
 </ol>
+
+<p class="kicker" id="lie">The pattern</p>
+<h2>The oldest lie, and how to spot it</h2>
+<p class="intro">Dara Horn argues that antisemitism is less a prejudice than one recurring lie. In her words: "The lie is always the same: Jews are destroying what you value the most." <a href="https://jewishinsider.com/2026/08/dara-horn-the-final-solution-antisemitism-bookshelf/" target="_blank" rel="noopener">Jewish Insider, 2026</a> The accusation changes to fit whatever each era holds sacred.</p>
+<ol class="lie">
+  <li><span class="yr">1144, England</span>
+    <div class="row"><b>Held sacred</b><span>Christian faith</span></div>
+    <div class="row acc"><b>The lie</b><span>Jews ritually murder Christian children at Passover. The first recorded case was William of Norwich. <a href="https://www.britannica.com/EBchecked/topic/69715/blood-libel" target="_blank" rel="noopener">Britannica</a></span></div></li>
+  <li><span class="yr">1903, Russia</span>
+    <div class="row"><b>Held sacred</b><span>Throne and national order</span></div>
+    <div class="row acc"><b>The lie</b><span>A secret Jewish council plots "to dominate the world." The Protocols were a forgery. <a href="https://encyclopedia.ushmm.org/narrative/10552/en" target="_blank" rel="noopener">USHMM</a></span></div></li>
+  <li><span class="yr">1875–1945, Europe</span>
+    <div class="row"><b>Held sacred</b><span>Race and the nation's blood</span></div>
+    <div class="row acc"><b>The lie</b><span>Jews are "polluting" pure Aryan blood. <a href="https://encyclopedia.ushmm.org/content/en/article/antisemitism-in-history-racial-antisemitism-18751945" target="_blank" rel="noopener">USHMM</a></span></div></li>
+  <li><span class="yr">20th century</span>
+    <div class="row"><b>Held sacred</b><span>Capitalism, or communism</span></div>
+    <div class="row acc"><b>The lie</b><span>"If capitalism was evil, Jews were capitalists; if communism was evil, Jews were communists." <a href="https://www.theatlantic.com/ideas/archive/2024/02/jewish-anti-semitism-harvard-claudine-gay-zionism/677454/" target="_blank" rel="noopener">Horn, The Atlantic</a></span></div></li>
+  <li class="now"><span class="yr">1975 to today</span>
+    <div class="row"><b>Held sacred</b><span>Human rights and anti-racism</span></div>
+    <div class="row acc"><b>The lie</b><span>The Jewish state is uniquely racist, colonial, genocidal. The UN said "Zionism is a form of racism" in 1975 and repealed it in 1991. <a href="https://www.jta.org/archive/u-n-votes-111-25-to-rescind-odious-resolution-on-zionism" target="_blank" rel="noopener">JTA</a> · <a href="#arguments">Today's versions, answered</a></span></div></li>
+</ol>
+<p class="credit">Why lead with the pattern: Horn's nonprofit, the Tell Institute, teaches students to recognize the Big Lie before they meet it, calling the approach "Prebunking, Not Debunking." <a href="https://www.thetellinstitute.org" target="_blank" rel="noopener">Tell Institute</a> The "held sacred" column is this site's reading of her pattern, not her own table.</p>
 
 <p class="kicker" id="moral">The moral case</p>
 <h2>Judge each side by what it wants and what it does</h2>
@@ -237,6 +289,14 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
 
 <p class="kicker" id="arguments">Answers</p>
 <h2>What you'll hear, and what to say</h2>
+<section class="habits" aria-labelledby="habits-h">
+  <h3 id="habits-h">Three habits before you answer</h3>
+  <ol>
+    <li><b>Assume they haven't heard it yet.</b>Dara Horn finds far more ignorance than malice: "Most people are not Haman." Answer the person in front of you, not the worst one you can imagine. <a href="https://jewishinsider.com/2026/08/dara-horn-the-final-solution-antisemitism-bookshelf/" target="_blank" rel="noopener">Jewish Insider</a></li>
+    <li><b>Name the pattern, then give the fact.</b>A fact answers one claim. Showing <a class="inl" href="#lie">the oldest lie</a> helps them catch the next one on their own. <a href="https://www.thetellinstitute.org/curriculum" target="_blank" rel="noopener">Tell Institute</a></li>
+    <li><b>Don't rest the case on the Holocaust.</b>Horn warns that when antisemitism is reduced to the Holocaust, "anything short of murdering 6 million Jews… seems minor by comparison." Israel's case rests on 3,000 years of Jewish life in the land. <a href="https://momentmag.com/is-holocaust-education-feeding-antisemitism/" target="_blank" rel="noopener">Horn, via Moment</a></li>
+  </ol>
+</section>
 
 <article class="arg">
   <div class="big">2029<small>earliest court ruling</small></div>
@@ -396,6 +456,19 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
   </ul></div>
 </article>
 
+<article class="arg">
+  <div class="big">111–25<small>UN vote to repeal it, 1991</small></div>
+  <p class="claim">"Zionism is racism."</p>
+  <div><span class="pill f">FALSE</span></div>
+  <p class="answer">The UN said this once, in 1975, with Soviet-bloc backing. It took the words back in 1991.</p>
+  <div class="body"><ul>
+    <li>1975: Resolution 3379 called Zionism "a form of racism and racial discrimination." It passed 72 to 35, with 32 abstentions. <a href="https://www.jta.org/archive/u-n-votes-111-25-to-rescind-odious-resolution-on-zionism" target="_blank" rel="noopener">JTA</a></li>
+    <li>1991: the General Assembly repealed it, 111 to 25. The Soviet Union co-sponsored the repeal. <a href="https://www.jta.org/archive/u-n-votes-111-25-to-rescind-odious-resolution-on-zionism" target="_blank" rel="noopener">JTA</a></li>
+    <li>Historian Izabella Tabarovsky documents the Soviet anti-Zionist propaganda campaign of 1967 to 1988 and links it to today's left-wing rhetoric. <a href="https://fathomjournal.org/newsletter/fathom-highlight-izabella-tabarovsky-on-soviet-anti-zionism-and-contemporary-left-antisemitism/" target="_blank" rel="noopener">Fathom</a></li>
+  </ul>
+  <p class="say"><b>If they say</b> "I'm criticizing Israel's government, not Jews": that's fair, as it is for any government. Then ask whether the charge fits <a href="#lie">the oldest lie</a>: is the Jewish state accused of destroying exactly what you value most?</p></div>
+</article>
+
 <p class="kicker" id="words">In their own words</p>
 <h2>Hamas, quoted directly</h2>
 <section class="quotes">
@@ -404,7 +477,19 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
   <blockquote>"We will do it twice and three times."<cite>Ghazi Hamad, Hamas politburo, on repeating October 7, 24 Oct 2023 · <a href="https://www.timesofisrael.com/liveblog_entry/hamas-official-says-group-will-repeat-oct-7-attack-twice-and-three-times-to-destroy-israel/" target="_blank" rel="noopener">MEMRI translation</a></cite></blockquote>
 </section>
 
-<footer>Sources: court records, government statistics, official documents, Hamas's own texts, Palestinian polling and peer-reviewed research. October 2026.</footer>
+<p class="kicker" id="deeper">Go deeper</p>
+<h2>Dara Horn's work, and her critics</h2>
+<p class="intro">The pattern section and the three habits above draw on her books, essays and teaching. Read her directly, and read the people who disagree with her.</p>
+<ul class="reads">
+  <li><a class="t" href="https://www.darahorn.com/book/the-final-solution-to-the-jewish-question" target="_blank" rel="noopener">The Final Solution to the Jewish Question: A Love Story for the Living</a><p>2026. Short essays on why efforts against antisemitism have failed, from Holocaust education to campus DEI, and what to do instead. The title is a deliberate provocation; her answer is the people "who refuse to bow to tyrants." <a class="s" href="https://www.washingtonindependentreviewofbooks.com/bookreview/the-final-solution-to-the-jewish-question-a-love-story-for-the-living" target="_blank" rel="noopener">Washington Independent Review of Books</a></p></li>
+  <li><a class="t" href="https://www.darahorn.com/book/people-love-dead-jews" target="_blank" rel="noopener">People Love Dead Jews: Reports from a Haunted Present</a><p>2021. Essays on why the world commemorates how Jews died and ignores how they live. Winner of the 2021 National Jewish Book Award. <a class="s" href="https://en.wikipedia.org/wiki/People_Love_Dead_Jews" target="_blank" rel="noopener">Wikipedia</a></p></li>
+  <li><a class="t" href="https://www.thetellinstitute.org/curriculum" target="_blank" rel="noopener">The Tell Institute</a><p>Her nonprofit's lessons for high schools and b'nai mitzvah classes. They teach the Big Lie as a pattern students can recognize.</p></li>
+  <li><a class="t" href="https://thefp.com/p/the-lie-at-the-center-of-antisemitism-coleman-hughes-dana-horn" target="_blank" rel="noopener">Listen: "The Lie at the Center of Antisemitism"</a><p>Horn with Coleman Hughes, The Free Press, September 2026. Also: <a class="s" href="https://www.timesofisrael.com/dara-horn-the-answer-to-the-jewish-question/" target="_blank" rel="noopener">Times of Israel, May 2026</a></p></li>
+  <li class="crit"><a class="t" href="https://www.nybooks.com/articles/2022/11/24/the-jewish-authenticity-trap-dara-horn/" target="_blank" rel="noopener">Critic: Sara Lipton, New York Review of Books</a><p>Calls People Love Dead Jews "fierce, often insightful" but a "strangely selective picture of Jewishness."</p></li>
+  <li class="crit"><a class="t" href="https://forward.com/opinion/485219/people-actually-prefer-live-jews-really-people-love-dead-jews-dara-horn/" target="_blank" rel="noopener">Critic: Rob Eshman, The Forward</a><p>Argues, citing Pew's 2017 survey, that most Americans feel warmly toward Jews.</p></li>
+</ul>
+
+<footer>Sources: court records, government statistics, official documents, Hamas's own texts, Palestinian polling, peer-reviewed research and Dara Horn's published work. November 2026.</footer>
 </div>
 
 <script>
@@ -456,7 +541,7 @@ document.querySelectorAll('.arg').forEach(function (a) {
 </script>
 <script>
 (function(){
-var Q=[{"q": "About how many Jews are there in the world?", "o": ["About 1.5 million", "About 16 million", "About 160 million", "About 450 million"], "a": 1, "x": "About 15.8 million in 2025, roughly 0.2% of humanity. Guesses run far higher: in a 2022 YouGov poll, Americans guessed 30% of the US is Jewish. The real share is about 2.4%.", "s": [{"t": "Institute for Jewish Policy Research (Sergio DellaPergola)", "u": "https://www.jpr.org.uk/reports/jewish-people-2126-demography-identity-and-future-global-minority"}, {"t": "J. The Jewish News of Northern California (reporting a YouGov poll)", "u": "https://jweekly.com/2022/03/17/in-wild-overestimate-americans-think-30-of-the-country-is-jewish/"}, {"t": "Pew Research Center", "u": "https://www.pewresearch.org/religion/2021/05/11/jewish-americans-in-2020/"}]}, {"q": "Israel is closest in size to which US state?", "o": ["Texas", "California", "New Jersey", "Florida"], "a": 2, "x": "Israel's surface area is about 22,070 square kilometers. New Jersey's is about 22,590.", "s": [{"t": "World Bank", "u": "https://data.worldbank.org/indicator/AG.SRF.TOTL.K2?locations=IL"}, {"t": "US Census Bureau", "u": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"}]}, {"q": "In 1939 there were about 16.5 million Jews. Has the world's Jewish population recovered since the Holocaust?", "o": ["Yes, it has doubled", "Yes, it is about 25 million", "No, it is still below 1939, at about 15.8 million", "No, it is about 5 million"], "a": 2, "x": "Six million Jews were murdered in the Holocaust. Eighty-five years later, the world's Jewish population is still below its 1939 size.", "s": [{"t": "Institute for Jewish Policy Research (Sergio DellaPergola)", "u": "https://www.jpr.org.uk/reports/jewish-people-2126-demography-identity-and-future-global-minority"}, {"t": "US Holocaust Memorial Museum", "u": "https://encyclopedia.ushmm.org/content/en/article/documenting-numbers-of-victims-of-the-holocaust-and-nazi-persecution"}]}, {"q": "When did Rome make 'Syria Palaestina' the official name of the province of Judaea?", "o": ["Before Jesus was born", "After crushing a Jewish revolt, around 135 CE", "During the Arab conquest of the 630s", "Under British rule in 1920"], "a": 1, "x": "Greek writers used the word for the coast centuries earlier. Rome made it the province's official name after crushing the Bar Kokhba revolt, replacing 'Judaea', and barred Jews from Jerusalem.", "s": [{"t": "Encyclopaedia Britannica", "u": "https://www.britannica.com/place/Palestine/Roman-Palestine"}, {"t": "Perseus Digital Library, Tufts University", "u": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=7:chapter=89"}]}, {"q": "About what share of Israeli Jews have family roots in the Middle East and North Africa rather than Europe?", "o": ["Under 10%", "About a quarter", "About half", "Over 90%"], "a": 2, "x": "Pew found Israeli Jews roughly evenly divided between Ashkenazi (European) and Sephardi or Mizrahi roots.", "s": [{"t": "Pew Research Center", "u": "https://www.pewresearch.org/religion/2016/03/08/israels-religiously-divided-society/"}]}, {"q": "Between 2005 and October 7, 2023, how many Israeli settlers or soldiers were stationed inside Gaza?", "o": ["About 500,000", "About 50,000", "A few thousand soldiers", "None"], "a": 3, "x": "In 2005 Israel removed all 21 Gaza settlements, about 8,500 to 9,000 settlers, and every soldier. Hamas seized Gaza in 2007 and fired rockets instead of building a state.", "s": [{"t": "Encyclopaedia Britannica", "u": "https://www.britannica.com/event/Israels-disengagement-from-Gaza"}]}, {"q": "On October 7, 2023, how many Israeli civilians did Hamas kill?", "o": ["About 100", "About 300", "About 700", "None; it was a military raid"], "a": 2, "x": "Israel's social security data: 695 Israeli civilians, including 36 children. The youngest was 10 months old.", "s": [{"t": "AFP", "u": "https://www.france24.com/en/live-news/20231215-israel-social-security-data-reveals-true-picture-of-oct-7-deaths"}]}, {"q": "On October 7, 2023, how many people did Hamas and its allies take hostage into Gaza?", "o": ["About 25", "About 50", "About 250", "About 2,500"], "a": 2, "x": "251 people, including 39 children. The youngest, Kfir Bibas, was nine months old. 85 came home in caskets. The last body was returned on January 26, 2026, 843 days later.", "s": [{"t": "Human Rights Watch", "u": "https://www.hrw.org/report/2024/07/17/i-cant-erase-all-the-blood-from-my-mind/palestinian-armed-groups-october-7"}, {"t": "ABC News", "u": "https://abc7news.com/post/body-last-remaining-hostage-retrieved-gaza-israel-says/18479257/"}]}, {"q": "Has the International Court of Justice ruled that Israel committed genocide?", "o": ["Yes, in January 2024", "Yes, in 2025", "No. It ordered interim measures; the main case is still in written pleadings", "No. It dismissed the case"], "a": 2, "x": "In 2024 the court ordered Israel to prevent genocidal acts and let aid in. It has not ruled on the merits; written pleadings run to 2029. Its then-president said it never decided genocide was plausible.", "s": [{"t": "International Court of Justice", "u": "https://www.icj-cij.org/case/192"}, {"t": "South African Jewish Report", "u": "https://www.sajr.co.za/media-misrepresenting-icj-ruling-says-retired-judge/"}]}, {"q": "The chant 'from the river to the sea' refers to which river and which sea?", "o": ["The Nile and the Red Sea", "The Jordan River and the Mediterranean Sea", "The Euphrates and the Persian Gulf", "The Tigris and the Dead Sea"], "a": 1, "x": "That span is all of Israel plus the West Bank and Gaza. Hamas's own 2017 document rejects 'any alternative to the full and complete liberation of Palestine, from the river to the sea.'", "s": [{"t": "Hamas (official site, archived)", "u": "https://web.archive.org/web/20170510123932/http://hamas.ps/en/post/678/"}]}, {"q": "The 'All Eyes on Rafah' image, shared tens of millions of times, was what?", "o": ["A drone photo", "A UN photo", "An AI-generated image", "A satellite image"], "a": 2, "x": "It was made with AI and spread by tens of millions of accounts. A viral picture is not evidence. Ask where an image comes from before you share it.", "s": [{"t": "NPR via WUSF", "u": "https://www.wusf.org/2024-06-03/2-artists-claim-credit-for-all-eyes-on-rafah-the-internets-most-viral-ai-image"}]}];
+var Q=[{"q": "About how many Jews are there in the world?", "o": ["About 1.5 million", "About 16 million", "About 160 million", "About 450 million"], "a": 1, "x": "About 15.8 million in 2025, roughly 0.2% of humanity. Guesses run far higher: in a 2022 YouGov poll, Americans guessed 30% of the US is Jewish. The real share is about 2.4%.", "s": [{"t": "Institute for Jewish Policy Research (Sergio DellaPergola)", "u": "https://www.jpr.org.uk/reports/jewish-people-2126-demography-identity-and-future-global-minority"}, {"t": "J. The Jewish News of Northern California (reporting a YouGov poll)", "u": "https://jweekly.com/2022/03/17/in-wild-overestimate-americans-think-30-of-the-country-is-jewish/"}, {"t": "Pew Research Center", "u": "https://www.pewresearch.org/religion/2021/05/11/jewish-americans-in-2020/"}]}, {"q": "Israel is closest in size to which US state?", "o": ["Texas", "California", "New Jersey", "Florida"], "a": 2, "x": "Israel's surface area is about 22,070 square kilometers. New Jersey's is about 22,590.", "s": [{"t": "World Bank", "u": "https://data.worldbank.org/indicator/AG.SRF.TOTL.K2?locations=IL"}, {"t": "US Census Bureau", "u": "https://www.census.gov/geographies/reference-files/2010/geo/state-area.html"}]}, {"q": "In 1939 there were about 16.5 million Jews. Has the world's Jewish population recovered since the Holocaust?", "o": ["Yes, it has doubled", "Yes, it is about 25 million", "No, it is still below 1939, at about 15.8 million", "No, it is about 5 million"], "a": 2, "x": "Six million Jews were murdered in the Holocaust. Eighty-five years later, the world's Jewish population is still below its 1939 size.", "s": [{"t": "Institute for Jewish Policy Research (Sergio DellaPergola)", "u": "https://www.jpr.org.uk/reports/jewish-people-2126-demography-identity-and-future-global-minority"}, {"t": "US Holocaust Memorial Museum", "u": "https://encyclopedia.ushmm.org/content/en/article/documenting-numbers-of-victims-of-the-holocaust-and-nazi-persecution"}]}, {"q": "When did Rome make 'Syria Palaestina' the official name of the province of Judaea?", "o": ["Before Jesus was born", "After crushing a Jewish revolt, around 135 CE", "During the Arab conquest of the 630s", "Under British rule in 1920"], "a": 1, "x": "Greek writers used the word for the coast centuries earlier. Rome made it the province's official name after crushing the Bar Kokhba revolt, replacing 'Judaea', and barred Jews from Jerusalem.", "s": [{"t": "Encyclopaedia Britannica", "u": "https://www.britannica.com/place/Palestine/Roman-Palestine"}, {"t": "Perseus Digital Library, Tufts University", "u": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=7:chapter=89"}]}, {"q": "About what share of Israeli Jews have family roots in the Middle East and North Africa rather than Europe?", "o": ["Under 10%", "About a quarter", "About half", "Over 90%"], "a": 2, "x": "Pew found Israeli Jews roughly evenly divided between Ashkenazi (European) and Sephardi or Mizrahi roots.", "s": [{"t": "Pew Research Center", "u": "https://www.pewresearch.org/religion/2016/03/08/israels-religiously-divided-society/"}]}, {"q": "Between 2005 and October 7, 2023, how many Israeli settlers or soldiers were stationed inside Gaza?", "o": ["About 500,000", "About 50,000", "A few thousand soldiers", "None"], "a": 3, "x": "In 2005 Israel removed all 21 Gaza settlements, about 8,500 to 9,000 settlers, and every soldier. Hamas seized Gaza in 2007 and fired rockets instead of building a state.", "s": [{"t": "Encyclopaedia Britannica", "u": "https://www.britannica.com/event/Israels-disengagement-from-Gaza"}]}, {"q": "On October 7, 2023, how many Israeli civilians did Hamas kill?", "o": ["About 100", "About 300", "About 700", "None; it was a military raid"], "a": 2, "x": "Israel's social security data: 695 Israeli civilians, including 36 children. The youngest was 10 months old.", "s": [{"t": "AFP", "u": "https://www.france24.com/en/live-news/20231215-israel-social-security-data-reveals-true-picture-of-oct-7-deaths"}]}, {"q": "On October 7, 2023, how many people did Hamas and its allies take hostage into Gaza?", "o": ["About 25", "About 50", "About 250", "About 2,500"], "a": 2, "x": "251 people, including 39 children. The youngest, Kfir Bibas, was nine months old. 85 came home in caskets. The last body was returned on January 26, 2026, 843 days later.", "s": [{"t": "Human Rights Watch", "u": "https://www.hrw.org/report/2024/07/17/i-cant-erase-all-the-blood-from-my-mind/palestinian-armed-groups-october-7"}, {"t": "ABC News", "u": "https://abc7news.com/post/body-last-remaining-hostage-retrieved-gaza-israel-says/18479257/"}]}, {"q": "Has the International Court of Justice ruled that Israel committed genocide?", "o": ["Yes, in January 2024", "Yes, in 2025", "No. It ordered interim measures; the main case is still in written pleadings", "No. It dismissed the case"], "a": 2, "x": "In 2024 the court ordered Israel to prevent genocidal acts and let aid in. It has not ruled on the merits; written pleadings run to 2029. Its then-president said it never decided genocide was plausible.", "s": [{"t": "International Court of Justice", "u": "https://www.icj-cij.org/case/192"}, {"t": "South African Jewish Report", "u": "https://www.sajr.co.za/media-misrepresenting-icj-ruling-says-retired-judge/"}]}, {"q": "The chant 'from the river to the sea' refers to which river and which sea?", "o": ["The Nile and the Red Sea", "The Jordan River and the Mediterranean Sea", "The Euphrates and the Persian Gulf", "The Tigris and the Dead Sea"], "a": 1, "x": "That span is all of Israel plus the West Bank and Gaza. Hamas's own 2017 document rejects 'any alternative to the full and complete liberation of Palestine, from the river to the sea.'", "s": [{"t": "Hamas (official site, archived)", "u": "https://web.archive.org/web/20170510123932/http://hamas.ps/en/post/678/"}]}, {"q": "In June 1941, before Israel existed, rioters in Baghdad attacked the city's Jews. What is that pogrom called?", "o": ["The Nakba", "The Farhud", "Kristallnacht", "The Dreyfus Affair"], "a": 1, "x": "The Farhud, June 1–2, 1941: rioters murdered between 150 and 180 Jews. Jews had lived in Iraq since the 6th century BCE. Hatred of Jews in the region did not begin with Israel.", "s": [{"t": "US Holocaust Memorial Museum", "u": "https://encyclopedia.ushmm.org/content/en/article/the-farhud"}]}, {"q": "In 1975 the UN General Assembly declared Zionism 'a form of racism.' What happened next?", "o": ["It still stands today", "The Security Council vetoed it", "The General Assembly repealed it in 1991, 111 to 25", "The world court overturned it"], "a": 2, "x": "Resolution 3379 passed with Soviet-bloc backing. In 1991 the General Assembly repealed it 111 to 25, and the Soviet Union co-sponsored the repeal.", "s": [{"t": "JTA", "u": "https://www.jta.org/archive/u-n-votes-111-25-to-rescind-odious-resolution-on-zionism"}]}, {"q": "The 'All Eyes on Rafah' image, shared tens of millions of times, was what?", "o": ["A drone photo", "A UN photo", "An AI-generated image", "A satellite image"], "a": 2, "x": "It was made with AI and spread by tens of millions of accounts. A viral picture is not evidence. Ask where an image comes from before you share it.", "s": [{"t": "NPR via WUSF", "u": "https://www.wusf.org/2024-06-03/2-artists-claim-credit-for-all-eyes-on-rafah-the-internets-most-viral-ai-image"}]}];
 var box=document.getElementById('quizbox'); if(!box) return;
 var i=0, score=0, answered=false;
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
