@@ -150,10 +150,12 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
 .lie .row.acc span{font-weight:700}
 .lie a,.habits a,.reads a.s{font-size:.8rem;white-space:nowrap}
 .credit{font-size:.82rem;color:var(--muted);margin:0}
-.who{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:12px;padding:18px 18px 16px;margin:0;display:grid;gap:8px;text-align:left}
-.who .ask{margin:0;font-size:.8rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.who blockquote{margin:0;font-family:var(--serif);font-weight:800;font-size:clamp(1.45rem,5.2vw,1.9rem);line-height:1.15;text-wrap:balance}
-.who .am{margin:0;font-family:var(--serif);font-size:1.08rem;line-height:1.35}
+.who{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:12px;padding:20px;margin:0;display:grid;gap:12px}
+.who blockquote{margin:0;font-family:var(--serif);font-weight:700;font-size:clamp(1.3rem,4.4vw,1.6rem);line-height:1.25;text-wrap:balance}
+.who .am{margin:0;font-family:var(--serif);font-size:1.08rem;line-height:1.4;color:var(--ink)}
+.who .he{font-weight:800;color:var(--accent);margin-inline-start:.2em}
+.who .pre{margin:0;padding-top:12px;border-top:1px solid var(--rule);font-size:1rem;line-height:1.45;color:var(--muted)}
+.who .pre q{color:var(--ink);font-weight:700;quotes:"\201C" "\201D"}
 .who figcaption{font-size:.8rem;color:var(--muted)}
 .who figcaption a{color:var(--muted)}
 .tools a:first-child{grid-column:1/-1}
@@ -221,9 +223,9 @@ i.hi,.stack .hi{background:var(--bar)} i.lo,.stack .lo{background:var(--bar2)} i
 
 <p class="kicker" id="who">What is a Jew?</p>
 <figure class="who">
-  <p class="ask">A religion? A race? A nation?</p>
-  <blockquote>"Jews predate all of those categories."</blockquote>
-  <p class="am">"We are Am Yisrael, the people of Israel."</p>
+  <blockquote>“Jews are a joinable tribal group with a common history, homeland and culture.”</blockquote>
+  <p class="am">“In Hebrew, it is one word that is two letters long: Am.” <span lang="he" class="he">עם</span></p>
+  <p class="pre">Asked whether Jews are a religion, a race or a nationality: <q>Jews predate all of those categories.</q></p>
   <figcaption>Dara Horn, 2024 · <a href="https://jewishportland.org/jewishreview/jr-stories/dara-horn-delivers-galvanizing-message-to-packed-mjcc-ballroom" target="_blank" rel="noopener">The Jewish Review</a></figcaption>
 </figure>
 
