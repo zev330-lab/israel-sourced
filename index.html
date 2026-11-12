@@ -16,6 +16,21 @@
 <link rel="manifest" href="site.webmanifest?v=2">
 <meta name="theme-color" content="#0b2a5b">
 <title>Israel, Sourced</title>
+<!-- Google Analytics (GA4). Replace the ID below with the site's Measurement ID. Nothing loads while it is the placeholder. -->
+<script>
+(function () {
+  var GA_ID = 'G-XXXXXXXXXX';
+  if (!/^G-[A-Z0-9]+$/.test(GA_ID) || GA_ID === 'G-XXXXXXXXXX') return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+})();
+</script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,800;8..60,900&display=swap">
 <style>
 /* Layout: phone-first single column. Hero stats, then history timeline, the moral case, charts, and argument cards that each lead with one big number. */
